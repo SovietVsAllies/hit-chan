@@ -5,6 +5,7 @@ from base64 import urlsafe_b64encode
 from base64 import urlsafe_b64decode
 from datetime import timedelta
 from hashlib import sha256
+from math import ceil
 
 from django.http import HttpResponse
 from django.http import JsonResponse
@@ -62,7 +63,8 @@ def get_board_list(request):
     boards = Board.objects.all()
     data = []
     for board in boards:
-        data.append({'id': board.id, 'name': board.name})
+        page_count = ceil(Post.objects.filter(parent=board.root_post).count() / 20)
+        data.append({'id': board.id, 'name': board.name, 'page_count': page_count})
     return JsonResponse(data, safe=False, json_dumps_params={'ensure_ascii': False})
 
 

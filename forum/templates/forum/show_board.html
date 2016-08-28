@@ -4,6 +4,8 @@
   {% load static %}
   <script type="text/javascript" src="{% static 'forum/js/hc-menu-loader.js' %}"></script>
   <script type="text/javascript" src="{% static 'forum/js/hc-thread-list-loader.js' %}"></script>
+  <script type="text/javascript" src="{% static 'forum/js/hc-page-navigation-generator.js' %}">
+  </script>
 </head>
 <body onload="load()">
 
@@ -37,17 +39,30 @@
 
   <div id="hc-thread-list">
   </div>
+  
+  <ul id="hc-page-navigation">
+  </ul>
 
   <script>
     function load() {
-      var boardId = window.location.href.split("/").slice(-3)[0];
-      var page = window.location.href.split("/").slice(-2)[0];
+      var boardId = parseInt(window.location.href.split("/").slice(-3)[0]);
+      var page = parseInt(window.location.href.split("/").slice(-2)[0]);
       var input = document.createElement("input");
       input.setAttribute("type", "hidden");
       input.setAttribute("name", "board_id");
       input.setAttribute("value", boardId);
       document.getElementById("hc-post-form").appendChild(input);
-      loadHcMenu();
+      loadHcMenu(function(boards) {
+        var i;
+        var length = boards.length;
+        var pageCount;
+        for (i = 0; i < length; i++) {
+          if (boards[i].id == boardId) {
+            pageCount = boards[i].page_count;
+          }
+        }
+        generatePageNavigation(page, pageCount);
+      });
       loadThreadList(boardId, page);
     }
   </script>
