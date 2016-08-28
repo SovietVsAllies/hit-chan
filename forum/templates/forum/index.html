@@ -6,7 +6,7 @@
   {% load static %}
   <script type="text/javascript" src="{% static 'forum/js/hc-menu-loader.js' %}"></script>
 </head>
-<body>
+<body onload="loadHcMenu()">
 
   <div id="hc-menu">
     <ul id="hc-menu-content">
@@ -21,10 +21,6 @@
       欢迎，HitChan是一个前台匿名后台实名的非营利性网站，旨在为大家提供一个理性客观中立的讨论环境。
     </p>
   </div>
-
-  <script>
-    loadHcMenu();
-  </script>
 
 </body>
 </html>

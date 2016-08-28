@@ -2,8 +2,10 @@
 <html>
 <head>
   {% load static %}
-  <script type="text/javascript" src="{% static 'forum/js/hc-menu-loader.js' %}"></script>
-  <script type="text/javascript" src="{% static 'forum/js/hc-thread-list-loader.js' %}"></script>
+  <script type="text/javascript" src="{% static 'forum/js/hc-menu-loader.js' %}">
+  </script>
+  <script type="text/javascript" src="{% static 'forum/js/hc-thread-list-loader.js' %}">
+  </script>
   <script type="text/javascript" src="{% static 'forum/js/hc-page-navigation-generator.js' %}">
   </script>
 </head>
@@ -45,8 +47,9 @@
 
   <script>
     function load() {
-      var boardId = parseInt(window.location.href.split("/").slice(-3)[0]);
-      var page = parseInt(window.location.href.split("/").slice(-2)[0]);
+      var boardInformations = window.location.href.split("/");
+      var boardId = parseInt(boardInformations.slice(-3)[0]);
+      var page = parseInt(boardInformations.slice(-2)[0]);
       var input = document.createElement("input");
       input.setAttribute("type", "hidden");
       input.setAttribute("name", "board_id");

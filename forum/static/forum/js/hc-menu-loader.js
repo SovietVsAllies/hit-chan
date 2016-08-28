@@ -17,7 +17,7 @@ function loadHcMenu(callback) {
             for (i = 0; i < length; i++) {
                 item = document.createElement("li");
                 hyperlink = document.createElement("a");
-                hyperlink.textContent = boards[i].name;
+                hyperlink.text = boards[i].name;
                 hyperlink.setAttribute("href", "/forum/b/" + boards[i].id + "/");
                 item.appendChild(hyperlink);
                 menu.appendChild(item);
