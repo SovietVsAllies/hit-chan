@@ -16,7 +16,7 @@ function generatePageNavigation(currentPage, maxPage) {
         pageNavigation.appendChild(item);
     }
     item = document.createElement("li");
-    if (currentPage == 1) {
+    if (currentPage <= 1) {
         item.className = "hc-page-disabled";
         span = document.createElement("span");
         span.innerHTML = "上一页";
@@ -47,7 +47,7 @@ function generatePageNavigation(currentPage, maxPage) {
         }
     }
     item = document.createElement("li");
-    if (currentPage == maxPage) {
+    if (currentPage >= maxPage) {
         item.className = "hc-page-disabled";
         span = document.createElement("span");
         span.innerHTML = "下一页";
