@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title id="title"></title>
+  <meta charset="UTF-8"> 
   {% load static %}
   <script type="text/javascript" src="{% static 'forum/js/hc-menu-loader.js' %}">
   </script>
@@ -46,7 +48,9 @@
   </ul>
 
   <script>
+    document.getElementsByTagName("title").innerHTML = "dfafa";
     function load() {
+      "use script";
       var boardInformations = window.location.href.split("/");
       var boardId = parseInt(boardInformations.slice(-3)[0]);
       var page = parseInt(boardInformations.slice(-2)[0]);
@@ -55,6 +59,7 @@
       input.setAttribute("name", "board_id");
       input.setAttribute("value", boardId);
       document.getElementById("hc-post-form").appendChild(input);
+
       loadHcMenu(function(boards) {
         var i;
         var length = boards.length;
@@ -62,6 +67,7 @@
         for (i = 0; i < length; i++) {
           if (boards[i].id == boardId) {
             pageCount = boards[i].page_count;
+            document.getElementById("title").innerHTML = boards[i].name;
           }
         }
         generatePageNavigation(page, pageCount);
