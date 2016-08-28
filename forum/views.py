@@ -13,6 +13,7 @@ from django.http import HttpResponseNotAllowed
 from django.http import HttpResponseForbidden
 from django.utils import timezone
 from django.shortcuts import render
+from django.shortcuts import redirect
 
 from .models import User
 from .models import Board
@@ -154,9 +155,13 @@ def post_thread(request):
     cookie = request.COOKIES.get(USER_COOKIE_NAME)
     if not is_valid(cookie):
         return HttpResponseForbidden()
-    username = request.POST.get('username', '无名氏')
+    username = request.POST.get('username')
+    if not username:
+        username = '无名氏'
     email = request.POST.get('email', '')
-    title = request.POST.get('title', '无标题')
+    title = request.POST.get('title')
+    if not title:
+        title = '无标题'
     text = request.POST.get('text', '')
     if not text.strip():
         return HttpResponseBadRequest('Text cannot be empty')
@@ -198,8 +203,15 @@ def post_thread(request):
         else:
             return HttpResponseBadRequest('Invalid or missing data')
         update_cookie(cookie)
-        return HttpResponse('1')
+        return redirect(request.META.get('HTTP_REFERER'))
     except Post.DoesNotExist:
         return HttpResponseBadRequest('Thread does not exist')
     except Board.DoesNotExist:
         return HttpResponseBadRequest('Board does not exist')
+
+
+def b(request, board_id, page=-1):
+    if page != -1:
+        return render(request, 'forum/show_board.html')
+    else:
+        return redirect('1/')

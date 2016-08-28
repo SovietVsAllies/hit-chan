@@ -17,12 +17,12 @@ function loadHcMenu() {
                 item = document.createElement("li");
                 hyperlink = document.createElement("a");
                 hyperlink.textContent = boards[i].name;
-                hyperlink.setAttribute("href", "b/" + boards[i].id + "/");
+                hyperlink.setAttribute("href", "/forum/b/" + boards[i].id + "/");
                 item.appendChild(hyperlink);
                 menu.appendChild(item);
             }
         }
     }
-    xmlHttp.open("GET", "api/get_board_list/", true);
+    xmlHttp.open("GET", "/forum/api/get_board_list/", true);
     xmlHttp.send();
 }

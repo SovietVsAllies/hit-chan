@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+  <script type="text/javascript" src="{% static 'forum/js/hc-menu-loader.js' %}"></script>
+  <script type="text/javascript" src="{% static 'forum/js/hc-thread-list-loader.js' %}"></script>
+</head>
+<body onload="load()">
+
+  <div id="hc-menu">
+    <ul id="hc-menu-content">
+    </ul>
+  </div>
+
+  <div id="hc-post">
+    <form id="hc-post-form" action="/forum/api/post_thread/" method="post">
+      {% csrf_token %}
+      <div class="hc-post-form-input">
+        用户名
+        <input type="text" name="username" maxlength="50">
+      </div>
+      <div class="hc-post-form-input">
+        Email
+        <input type="text" name="email" maxlength="50">
+      </div>
+      <div class="hc-post-form-input">
+        标题
+        <input type="text" name="title" maxlength="50">
+      </div>
+      <div class="hc-post-form-input">
+        正文
+        <input type="text" name="text">
+      </div>
+      <input type="submit" value="送出">
+    </form>
+  </div>
+
+  <div id="hc-thread-list">
+  </div>
+
+  <script>
+    function load() {
+      var boardId = window.location.href.split("/").slice(-3)[0];
+      var page = window.location.href.split("/").slice(-2)[0];
+      var input = document.createElement("input");
+      input.setAttribute("type", "hidden");
+      input.setAttribute("name", "board_id");
+      input.setAttribute("value", boardId);
+      document.getElementById("hc-post-form").appendChild(input);
+      loadHcMenu();
+      loadThreadList(boardId, page);
+    }
+  </script>
+
+</body>
+</html>
