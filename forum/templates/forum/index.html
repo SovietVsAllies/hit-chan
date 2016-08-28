@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+  <title>首页 - HitChan</title>
+  {% load static %}
+  <script type="text/javascript" src="{% static 'forum/js/hc-menu-loader.js' %}"></script>
+</head>
+<body>
+
+  <div id="hc-menu">
+    <ul id="hc-menu-content">
+    </ul>
+  </div>
+
+  <div id="hc-content" style="text-align:center;">
+    <h2>
+      <font color="#CC0000">“人，是会思考的芦苇。”——帕斯卡，《思想录》</font>
+    </h2>
+    <p>
+      欢迎，HitChan是一个前台匿名后台实名的非营利性网站，旨在为大家提供一个理性客观中立的讨论环境。
+    </p>
+  </div>
+
+  <script>
+    loadHcMenu();
+  </script>
+
+</body>

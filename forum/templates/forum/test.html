@@ -5,35 +5,11 @@
 <ul id="content">
 </ul>
 
+<p id="tttt">
+</p>
+
 <script>
-var xmlHttp = new XMLHttpRequest();
-xmlHttp.onreadystatechange = function() {
-  if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-    var threads = JSON.parse(xmlHttp.responseText);
-    var content = document.getElementById("content");
-    for (var i = 0; i < threads.length; i++) {
-      var item = document.createElement("li");
-      item.appendChild(document.createTextNode("用户ID：" + threads[i].user));
-      item.appendChild(document.createElement("br"));
-      item.appendChild(document.createTextNode("用户名：" + threads[i].username));
-      item.appendChild(document.createElement("br"));
-      item.appendChild(document.createTextNode("标题：" + threads[i].title));
-      item.appendChild(document.createElement("br"));
-      item.appendChild(document.createTextNode("Email：" + threads[i].email));
-      item.appendChild(document.createElement("br"));
-      item.appendChild(document.createTextNode("正文：" + threads[i].text));
-      item.appendChild(document.createElement("br"));
-      item.appendChild(document.createTextNode("创建时间：" + threads[i].created_at));
-      item.appendChild(document.createElement("br"));
-      item.appendChild(document.createTextNode("最后回复时间：" + threads[i].last_reply));
-      item.appendChild(document.createElement("br"));
-      item.appendChild(document.createTextNode("回复数：" + threads[i].reply_count));
-      content.appendChild(item);
-    }
-  }
-}
-xmlHttp.open("GET", "api/show_board/?id=1", true);
-xmlHttp.send();
+document.getElementById("tttt").innerHTML = window.location.href.split("/").slice(-2)[0];
 </script>
 
 </body>

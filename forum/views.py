@@ -20,7 +20,7 @@ from .models import Post
 
 
 def index(request):
-    return render(request, 'forum/test.html')
+    return render(request, 'forum/index.html')
 
 
 USER_COOKIE_NAME = 'user'
