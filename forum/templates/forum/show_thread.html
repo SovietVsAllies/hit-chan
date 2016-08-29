@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title id="title"></title>
+  <meta charset="UTF-8"> 
+  {% load static %}
+  <script type="text/javascript" src="{% static 'forum/js/hc-menu-loader.js' %}">
+  </script>
+  <script type="text/javascript" src="{% static 'forum/js/hc-reply-list-loader.js' %}">
+  </script>
+  <script type="text/javascript" src="{% static 'forum/js/hc-page-navigation-generator.js' %}">
+  </script>
+</head>
+<body onload="load()">
+
+	<div id="hc-menu">
+    <ul id="hc-menu-content">
+    </ul>
+  </div>
+
+  <div id="hc-post">
+    <form id="hc-post-form" action="/forum/api/post_thread/" method="post">
+      {% csrf_token %}
+      <div class="hc-post-form-input">
+        回复到 <p id="threadId" maxlength="50"></p>
+      </div>
+      <div class="hc-post-form-input">
+        用户名
+        <input type="text" name="username" maxlength="50">
+      </div>
+      <div class="hc-post-form-input">
+        Email
+        <input type="text" name="email" maxlength="50">
+      </div>
+      <div class="hc-post-form-input">
+        标题
+        <input type="text" name="title" maxlength="50">
+      </div>
+      <div class="hc-post-form-input">
+        正文
+        <input type="text" name="text">
+      </div>
+      <input type="submit" value="送出">
+    </form>
+  </div>
+
+	<div id="hc-thread-list">
+  </div>
+
+  <ul id="hc-page-navigation">
+  </ul>
+
+  <script type="text/javascript">
+  	function load() {
+  		"use strict";
+  		var threadInformations = window.location.href.split("/");
+      var threadId = parseInt(threadInformations.slice(-3)[0]);
+      var page = parseInt(threadInformations.slice(-2)[0]);
+      var input = document.createElement("input");
+      document.getElementById("title").innerHTML = "No." + threadId +
+      		"-匿名版-hitchan";
+      document.getElementById("threadId").innerHTML = threadId;
+      input.setAttribute("type", "hidden");
+      input.setAttribute("name", "thread_id");
+      input.setAttribute("value", threadId);
+      document.getElementById("hc-post-form").appendChild(input);
+
+      loadHcMenu();
+
+      loadReplyList(threadId, page);
+  	}
+  </script>
+  
+</body>
+</html>
