@@ -217,3 +217,9 @@ def b(request, board_id, page=-1):
         return render(request, 'forum/show_board.html')
     else:
         return redirect('1/')
+
+def t(request, thread_id, page=-1):
+    if page != -1:
+        return render(request, 'forum/show_thread.html')
+    else:
+        return redirect('1/')

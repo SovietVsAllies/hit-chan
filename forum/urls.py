@@ -11,4 +11,6 @@ urlpatterns = [
     url(r'^api/post_thread/$', views.post_thread, name='post_thread'),
     url(r'^b/(\d+)/$', views.b, name='b'),
     url(r'^b/(\d+)/(\d+)/$', views.b, name='b'),
+    url(r'^t/(\d+)/$', views.t, name='t'),
+    url(r'^t/(\d+)/(\d+)/$', views.t, name='t'),
 ]
