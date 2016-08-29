@@ -13,7 +13,7 @@ function loadReplyList(threadId, page) {
 		var threadAndReplies;
 		var list = document.getElementById("hc-threadANDreply-list");
 		if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-			threadAndReplies = JSON.parse(xmlHttp.responText);
+			threadAndReplies = JSON.parse(xmlHttp.responseText);
 			length = threadAndReplies.length - 1;
 
 		    item = document.createElement("div");
@@ -83,8 +83,8 @@ function loadReplyList(threadId, page) {
 	            list.appendChild(item);
                 list.appendChild(document.createElement("hr"));
             }
+            generatePageNavigation(page, threadAndReplies.reply_count);
 		}
-		generatePageNavigation(page, threadAndReplies.reply_count);
 	}
 	xmlHttp.open("GET", "/forum/api/thread/?id=" + threadId + "&page=" + page, true);
     xmlHttp.send();
