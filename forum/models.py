@@ -6,6 +6,7 @@ from django.db.models import TextField
 from django.db.models import IntegerField
 from django.db.models import ForeignKey
 from django.db.models import OneToOneField
+from django.db.models import BooleanField
 
 
 class Post(Model):
@@ -29,3 +30,7 @@ class Board(Model):
 class User(Model):
     token = CharField(max_length=64, primary_key=True)
     time_last_updated = DateTimeField(auto_now=True)
+
+
+class Settings(Model):
+    open_cookies = BooleanField()

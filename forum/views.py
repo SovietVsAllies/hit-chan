@@ -19,6 +19,7 @@ from django.shortcuts import redirect
 from .models import User
 from .models import Board
 from .models import Post
+from .models import Settings
 
 
 def index(request):
@@ -31,13 +32,19 @@ USER_COOKIE_NAME = 'user'
 def get_cookie(request):
     if request.method != 'GET':
         return HttpResponseNotAllowed(['GET'])
+    if not Settings.objects.get().open_cookies:
+        return HttpResponseForbidden()
     cookie = request.COOKIES.get(USER_COOKIE_NAME)
     response = HttpResponse(cookie)
     if not is_valid(cookie):
-        cookie = quote_from_bytes(urlsafe_b64encode(os.urandom(30)))
+        cookie = generate_cookie()
         update_cookie(cookie)
         response.set_cookie(USER_COOKIE_NAME, cookie)
     return response
+
+
+def generate_cookie():
+    return quote_from_bytes(urlsafe_b64encode(os.urandom(30)))
 
 
 def is_valid(cookie):
@@ -161,8 +168,14 @@ def post_thread(request):
     if request.method != 'POST':
         return HttpResponseNotAllowed(['POST'])
     cookie = request.COOKIES.get(USER_COOKIE_NAME)
+    cookie_generated = False
     if not is_valid(cookie):
-        return HttpResponseForbidden()
+        if Settings.objects.get().open_cookies:
+            cookie = generate_cookie()
+            update_cookie(cookie)
+            cookie_generated = True
+        else:
+            return HttpResponseForbidden()
     username = request.POST.get('username')
     if not username:
         username = '无名氏'
@@ -211,7 +224,10 @@ def post_thread(request):
         else:
             return HttpResponseBadRequest('Invalid or missing data')
         update_cookie(cookie)
-        return redirect(request.META.get('HTTP_REFERER'))
+        response = redirect(request.META.get('HTTP_REFERER'))
+        if cookie_generated:
+            response.set_cookie(USER_COOKIE_NAME, cookie)
+        return response
     except Post.DoesNotExist:
         return HttpResponseBadRequest('Thread does not exist')
     except Board.DoesNotExist:
