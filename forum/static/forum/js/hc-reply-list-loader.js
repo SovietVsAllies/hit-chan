@@ -14,7 +14,6 @@ function loadReplyList(threadId, page) {
 		var list = document.getElementById("hc-threadANDreply-list");
 		if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
 			threadAndReplies = JSON.parse(xmlHttp.responseText);
-			length = threadAndReplies.length - 1;
 
 		    item = document.createElement("div");
 
@@ -51,6 +50,7 @@ function loadReplyList(threadId, page) {
             list.appendChild(item);
             list.appendChild(document.createElement("hr"));
 
+            length = threadAndReplies.replies.length;
             for (i = 0; i < length; i++) {
             	var replyContent;
             	item = document.createElement("div");
@@ -60,24 +60,24 @@ function loadReplyList(threadId, page) {
 
 	            span = document.createElement("span");
 	            span.className = "hc-reply-info-username";
-	            span.innerHTML = threadAndReplies.replies.username;
+	            span.innerHTML = threadAndReplies.replies[i].username;
 	            replyInfo.appendChild(span);
 
 	            span = document.createElement("span");
 	            span.className = "hc-reply-info-time";
-	            span.innerHTML = threadAndReplies.replies.created_at;
+	            span.innerHTML = threadAndReplies.replies[i].created_at;
 	            replyInfo.appendChild(span);
 
 	            span = document.createElement("span");
 	            span.className = "hc-reply-info-uid";
-	            span.innerHTML = threadAndReplies.replies.user;
+	            span.innerHTML = threadAndReplies.replies[i].user;
 	            replyInfo.appendChild(span);
 
 	            item.appendChild(replyInfo);
 
 	            replyContent = document.createElement("div");
 	            replyContent.className = "hc-reply-content";
-	            replyContent.innerHTML = threadAndReplies.replies.text;
+	            replyContent.innerHTML = threadAndReplies.replies[i].text;
 	            item.appendChild(replyContent);
 
 	            list.appendChild(item);
