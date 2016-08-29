@@ -1,13 +1,17 @@
 "use script";
 
 function loadReplyList(threadId, page) {
-	var i;
-	var length;
-	var item;
-	var threadInfo;
-	var span;
+
 	var xmlHttp = new XMLHttpRequest();
 	xmlHttp.onreadystatechange = function() {
+		var i;
+		var length;
+		var item;
+		var threadInfo;
+		var threadContent;
+		var span;
+		var threadAndReplies;
+		var list = document.getElementById("hc-threadANDreply-list");
 		if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
 			threadAndReplies = JSON.parse(xmlHttp.responText);
 			length = threadAndReplies.length - 1;
@@ -44,7 +48,11 @@ function loadReplyList(threadId, page) {
             threadContent.innerHTML = threadAndReplies.text;
             item.appendChild(threadContent);
 
+            list.appendChild(item);
+            list.appendChild(document.createElement("hr"));
+
             for (i = 0; i < length; i++) {
+            	var replyContent;
             	item = document.createElement("div");
 
 	            replyInfo = document.createElement("div");
@@ -71,6 +79,9 @@ function loadReplyList(threadId, page) {
 	            replyContent.className = "hc-reply-content";
 	            replyContent.innerHTML = threadAndReplies.replies.text;
 	            item.appendChild(replyContent);
+
+	            list.appendChild(item);
+                list.appendChild(document.createElement("hr"));
             }
 		}
 		generatePageNavigation(page, threadAndReplies.reply_count);
