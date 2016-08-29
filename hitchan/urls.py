@@ -16,8 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.conf.urls import include
 from django.contrib import admin
+from django.shortcuts import redirect
 
 urlpatterns = [
+    url(r'^$', lambda r: redirect('/forum/')),
     url(r'^forum/', include('forum.urls')),
     url(r'^admin/', admin.site.urls),
 ]
