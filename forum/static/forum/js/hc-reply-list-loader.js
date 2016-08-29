@@ -11,11 +11,15 @@ function loadReplyList(threadId, page) {
 		var threadContent;
 		var span;
 		var threadAndReplies;
+        var d;
+        var replyContent;
 		var list = document.getElementById("hc-threadANDreply-list");
 		if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+			d = new Date();
 			threadAndReplies = JSON.parse(xmlHttp.responseText);
 
 		    item = document.createElement("div");
+		    item.className = "hc-thread";
 
             threadInfo = document.createElement("div");
             threadInfo.className = "hc-thread-info";
@@ -32,7 +36,10 @@ function loadReplyList(threadId, page) {
 
             span = document.createElement("span");
             span.className = "hc-thread-info-time";
-            span.innerHTML = threadAndReplies.created_at;
+            d.setTime(Date.parse(threadAndReplies.created_at));
+            span.innerHTML = d.getHours() + ':' + d.getMinutes() + ' ' + 
+                        d.getFullYear() + '-' + (d.getMonth() + 1) +
+                        '-' + d.getDate();
             threadInfo.appendChild(span);
 
             span = document.createElement("span");
@@ -52,15 +59,18 @@ function loadReplyList(threadId, page) {
 
             length = threadAndReplies.replies.length;
             for (i = 0; i < length; i++) {
-            	var replyContent;
             	item = document.createElement("div");
+            	item.className = "hc-reply";
 
 	            replyInfo = document.createElement("div");
 	            replyInfo.className = "hc-reply-info";
 
 	            span = document.createElement("span");
 	            span.className = "hc-reply-info-username";
-	            span.innerHTML = threadAndReplies.replies[i].username;
+            	d.setTime(Date.parse(threadAndReplies.replies[i].created_at));
+            	span.innerHTML = d.getHours() + ':' + d.getMinutes() + ' ' + 
+                        d.getFullYear() + '-' + (d.getMonth() + 1) +
+                        '-' + d.getDate();
 	            replyInfo.appendChild(span);
 
 	            span = document.createElement("span");

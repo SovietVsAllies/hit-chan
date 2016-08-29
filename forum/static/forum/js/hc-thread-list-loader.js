@@ -12,13 +12,17 @@ function loadThreadList(boardId, page) {
         var span;
         var hyperlink;
         var length;
+        var d;
         var list = document.getElementById("hc-thread-list");
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+            d = new Date();
             board = JSON.parse(xmlHttp.responseText);
             threads = board.threads;
             length = threads.length;
             for (i = 0; i < length; i++) {
                 item = document.createElement("div");
+                item.className = "hc-thread";
+
                 threadInfo = document.createElement("div");
                 threadInfo.className = "hc-thread-info";
 
@@ -34,7 +38,10 @@ function loadThreadList(boardId, page) {
 
                 span = document.createElement("span");
                 span.className = "hc-thread-info-time";
-                span.innerHTML = threads[i].created_at;
+                d.setTime(Date.parse(threads[i].created_at));
+                span.innerHTML = d.getHours() + ':' + d.getMinutes() + ' ' + 
+                        d.getFullYear() + '-' + (d.getMonth() + 1) +
+                        '-' + d.getDate();
                 threadInfo.appendChild(span);
 
                 span = document.createElement("span");
