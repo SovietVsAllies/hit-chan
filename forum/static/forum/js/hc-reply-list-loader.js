@@ -83,7 +83,7 @@ function loadReplyList(threadId, page) {
 	            list.appendChild(item);
                 list.appendChild(document.createElement("hr"));
             }
-            generatePageNavigation(page, ceil(threadAndReplies.reply_count / 20));
+            generatePageNavigation(page, Math.ceil(threadAndReplies.reply_count / 20));
 		}
 	}
 	xmlHttp.open("GET", "/forum/api/thread/?id=" + threadId + "&page=" + page, true);
