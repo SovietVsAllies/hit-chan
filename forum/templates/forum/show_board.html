@@ -59,20 +59,7 @@
       input.setAttribute("value", boardId);
       document.getElementById("hc-post-form").appendChild(input);
 
-      loadHcMenu(function(boards) {
-        var i;
-        var length = boards.length;
-        var pageCount;
-        for (i = 0; i < length; i++) {
-          if (boards[i].id == boardId) {
-            pageCount = boards[i].page_count;
-            document.getElementById("title").innerHTML = boards[i].name +
-                "-匿名版-hitchan";
-          }
-        }
-        generatePageNavigation(page, pageCount);
-      });
-
+      loadHcMenu();
       loadThreadList(boardId, page);
     }
   </script>
