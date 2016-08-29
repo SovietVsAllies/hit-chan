@@ -1,7 +1,6 @@
 "use strict";
 
-function loadHcMenu(callback) {
-    callback = (typeof callback !== "undefined" ? callback : function(boards) {})
+function loadHcMenu() {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() {
         var i;
@@ -22,7 +21,6 @@ function loadHcMenu(callback) {
                 item.appendChild(hyperlink);
                 menu.appendChild(item);
             }
-            callback(boards);
         }
     }
     xmlHttp.open("GET", "/forum/api/get_board_list/", true);

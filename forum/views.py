@@ -82,9 +82,9 @@ def show_board(request):
         board = Board.objects.get(id=board_id)
         posts = Post.objects.filter(parent=board.root_post).order_by('-last_reply')[
                 (page - 1) * 20: page * 20]
-        data = []
+        thread_data = []
         for post in posts:
-            data.append({
+            thread_data.append({
                 'id': post.id,
                 'img': post.image_url,
                 'created_at': post.time_created.strftime(DATE_FORMAT),
@@ -96,7 +96,13 @@ def show_board(request):
                 'reply_count': post.reply_count,
                 'last_reply': post.last_reply.strftime(DATE_FORMAT),
             })
-        return JsonResponse(data, safe=False, json_dumps_params={'ensure_ascii': False})
+        data = {
+            'id': board.id,
+            'name': board.name,
+            'page_count': ceil(Post.objects.filter(parent=board.root_post).count() / 20),
+            'threads': thread_data,
+        }
+        return JsonResponse(data, json_dumps_params={'ensure_ascii': False})
     except (KeyError, ValueError):
         return HttpResponseBadRequest('Invalid or missing data')
     except Board.DoesNotExist:
@@ -139,7 +145,7 @@ def thread(request):
             'last_reply': thread_root.last_reply.strftime(DATE_FORMAT),
             'replies': replies_data,
         }
-        return JsonResponse(data, safe=False, json_dumps_params={'ensure_ascii': False})
+        return JsonResponse(data, json_dumps_params={'ensure_ascii': False})
     except (KeyError, ValueError):
         return HttpResponseBadRequest('Invalid or missing data')
     except Post.DoesNotExist:
@@ -217,6 +223,7 @@ def b(request, board_id, page=-1):
         return render(request, 'forum/show_board.html')
     else:
         return redirect('1/')
+
 
 def t(request, thread_id, page=-1):
     if page != -1:

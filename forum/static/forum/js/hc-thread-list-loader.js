@@ -4,6 +4,7 @@ function loadThreadList(boardId, page) {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() {
         var i;
+        var board;
         var threads;
         var item;
         var threadInfo;
@@ -13,7 +14,8 @@ function loadThreadList(boardId, page) {
         var length;
         var list = document.getElementById("hc-thread-list");
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-            threads = JSON.parse(xmlHttp.responseText);
+            board = JSON.parse(xmlHttp.responseText);
+            threads = board.threads;
             length = threads.length;
             for (i = 0; i < length; i++) {
                 item = document.createElement("div");
@@ -55,6 +57,8 @@ function loadThreadList(boardId, page) {
                 list.appendChild(item);
                 list.appendChild(document.createElement("hr"));
             }
+            generatePageNavigation(page, board.page_count);
+            document.getElementById("title").innerHTML = board.name + "-匿名版-hitchan";
         }
     }
     xmlHttp.open("GET", "/forum/api/show_board/?id=" + boardId + "&page=" + page, true);
