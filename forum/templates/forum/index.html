@@ -3,7 +3,17 @@
 <head>
   <title>首页 - HitChan</title>
   <meta charset="UTF-8"> 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      font-size: 100%;
+    }
+  </style>
   {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-menu-style.css' %}">
   <script type="text/javascript" src="{% static 'forum/js/hc-menu-loader.js' %}"></script>
 </head>
 <body onload="loadHcMenu()">

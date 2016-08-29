@@ -1,0 +1,50 @@
+#hc-menu {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	position: fixed;
+	left: 0;
+	height: 100%;
+}
+
+#hc-menu-content {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: #f1f1f1;
+	height: 100%;
+	overflow: auto;
+}
+
+#hc-menu-content > li {
+	border-bottom: 0.1em solid white;
+	list-style-type: none;
+}
+
+#hc-menu-content > li > a {
+	text-align: center;
+	color: #000;
+	display: block;
+	width: 6em;
+	text-decoration: none;
+}
+
+#hc-menu-content > li > a:hover {
+	color: white;
+	background-color: #cccccc;
+}
+
+#hc-menu-content > li > a.active {
+	color: white;
+	background-color: #da70d6;
+}
+
+#hc-menu-homepage {
+	border-bottom: 0.1em inset black !important;
+}
+
+#hc-menu-homepage a {
+	color: white !important;
+	background-color: #663366;
+}

@@ -2,8 +2,18 @@
 <html>
 <head>
   <title id="title"></title>
-  <meta charset="UTF-8"> 
+  <meta charset="UTF-8">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      outline: 0;
+      font-size: 100%;
+    }
+  </style>
   {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-menu-style.css' %}">
   <script type="text/javascript" src="{% static 'forum/js/hc-menu-loader.js' %}">
   </script>
   <script type="text/javascript" src="{% static 'forum/js/hc-thread-list-loader.js' %}">
@@ -15,6 +25,9 @@
 
   <div id="hc-menu">
     <ul id="hc-menu-content">
+      <li id="hc-menu-homepage">
+        <a href="/forum/">首页</a>
+      </li>
     </ul>
   </div>
 
