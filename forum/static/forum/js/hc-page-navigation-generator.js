@@ -28,6 +28,7 @@ function generatePageNavigation(currentPage, maxPage) {
         item.appendChild(span);
         pageNavigation.appendChild(item);
     } else {
+        item.className = "hc-page-enabled";
         span = document.createElement("span");
         hyperlink = document.createElement("a");
         hyperlink.setAttribute("href", "../" + (currentPage - 1) + "/");
