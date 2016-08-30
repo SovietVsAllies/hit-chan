@@ -13,6 +13,7 @@ function loadThreadList(boardId, page) {
         var hyperlink;
         var length;
         var d;
+        var ruleBetweenThreads;
         var list = document.getElementById("hc-thread-list");
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
             d = new Date();
@@ -28,25 +29,31 @@ function loadThreadList(boardId, page) {
 
                 span = document.createElement("span");
                 span.className = "hc-thread-info-title";
-                span.innerHTML = threads[i].title;
+                span.innerHTML = threads[i].title + "&nbsp";
                 threadInfo.appendChild(span);
 
                 span = document.createElement("span");
                 span.className = "hc-thread-info-username";
-                span.innerHTML = threads[i].username;
+                span.innerHTML = threads[i].username + "&nbsp" + "&nbsp";
                 threadInfo.appendChild(span);
 
                 span = document.createElement("span");
                 span.className = "hc-thread-info-time";
                 d.setTime(Date.parse(threads[i].created_at));
-                span.innerHTML = d.getHours() + ':' + d.getMinutes() + ' ' + 
-                        d.getFullYear() + '-' + (d.getMonth() + 1) +
-                        '-' + d.getDate();
+                if (d.getMinutes() < 10) {
+                    span.innerHTML = d.getHours() + ':0' + d.getMinutes() + "&nbsp" +
+                        "&nbsp" + d.getFullYear() + '-' + (d.getMonth() + 1) +
+                        '-' + d.getDate() + "&nbsp" + "&nbsp";
+                } else {
+                    span.innerHTML = d.getHours() + ':' + d.getMinutes() + "&nbsp" +
+                        "&nbsp" + d.getFullYear() + '-' + (d.getMonth() + 1) +
+                        '-' + d.getDate() + "&nbsp" + "&nbsp";
+                }
                 threadInfo.appendChild(span);
 
                 span = document.createElement("span");
                 span.className = "hc-thread-info-uid";
-                span.innerHTML = threads[i].user;
+                span.innerHTML = "UID: " + threads[i].user;
                 threadInfo.appendChild(span);
 
                 hyperlink = document.createElement("a");
@@ -62,7 +69,9 @@ function loadThreadList(boardId, page) {
                 item.appendChild(threadContent);
 
                 list.appendChild(item);
-                list.appendChild(document.createElement("hr"));
+                ruleBetweenThreads = document.createElement("hr");
+                ruleBetweenThreads.className = "rule-between-threads";
+                list.appendChild(ruleBetweenThreads);
             }
             generatePageNavigation(page, board.page_count);
             document.getElementById("title").innerHTML = board.name + "-匿名版-HitChan";

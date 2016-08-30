@@ -1,9 +1,0 @@
-#hc-page-navigation li {
-	display: inline;
-}
-
-#hc-page-navigation a {
-	display: block;
-    padding: 8px;
-    background-color: #dddddd;
-}
