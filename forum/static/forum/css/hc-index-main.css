@@ -1,0 +1,21 @@
+#hc-index-main {
+	position: absolute;
+	left: 13%;
+	width: 87%;
+	margin-top: 5em;
+	font-family: sans-serif;
+	text-align: center;
+}
+
+#hc-index-main h1 {
+	font-size: 2.5em;
+	color: #330033;
+	font-weight: bold;
+}
+
+#hc-index-main p {
+	position: relative;
+	top: 1em;
+	font-size: 1em;
+	color: #ccccff;
+}

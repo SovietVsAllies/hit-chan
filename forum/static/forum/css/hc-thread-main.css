@@ -3,12 +3,12 @@ body {
 }
 
 .main {
-	font-family: sans-serif !important;
 	z-index: 0;
 	position: absolute;
-	margin-top: 3em;
-	width: 86%;
 	left: 14%;
+	width: 86%;
+	margin-top: 3em;
+	font-family: sans-serif !important;
 }
 
 /* Title style */

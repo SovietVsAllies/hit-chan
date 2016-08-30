@@ -15,7 +15,7 @@
   {% load static %}
   <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-menu-style.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-top-bar-style.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'forum/static/forum/css/font-awesome-4.6.3/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-index-main.css' %}">
   <script type="text/javascript" src="{% static 'forum/js/hc-menu-loader.js' %}"></script>
 </head>
 <body onload="loadHcMenu()">
@@ -30,10 +30,9 @@
     </ul>
   </div>
 
-  <div class="hc-content" style="text-align:center;">
-    <h2>
-      <font color="#CC0000">“人，是会思考的芦苇。”——帕斯卡，《思想录》</font>
-    </h2>
+  <div id="hc-index-main" style="text-align:center;">
+    <h1>别让你的舌头抢先于你的思考。—— 德谟克里特</h1>
+    <img src="{% static 'forum/img/index.jpg' %}">
     <p>
       欢迎，HitChan是一个前台匿名后台实名的非营利性网站，旨在为大家提供一个理性客观中立的讨论环境。
     </p>

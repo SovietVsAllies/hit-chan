@@ -1,10 +1,11 @@
 .hc-top-bar {
 	z-index: 233;
-	padding: 0;
 	position: fixed;
-	background-color: black;
+	top: 0;
 	height: 2.4em;
 	width: 100%;
+	padding: 0;
+	background-color: black;
 	overflow: hidden;
 }
 
