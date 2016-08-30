@@ -18,7 +18,7 @@ class Post(Model):
     title = CharField(max_length=50, blank=True)
     text = TextField(blank=True)
     reply_count = IntegerField(default=-1)
-    parent = ForeignKey('self', on_delete=models.PROTECT, null=True, blank=True)
+    parent = ForeignKey('self', on_delete=models.PROTECT, null=True, blank=True, db_index=True)
     last_reply = DateTimeField(null=True, blank=True)
 
 

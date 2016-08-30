@@ -17,6 +17,7 @@
   <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-menu-style.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-top-bar.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-tool-style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-post-form-style.css' %}">
   <script type="text/javascript" src="{% static 'forum/js/hc-menu-loader.js' %}">
   </script>
   <script type="text/javascript" src="{% static 'forum/js/hc-thread-list-loader.js' %}">
@@ -51,22 +52,24 @@
       <form id="hc-post-form" action="/forum/api/post_thread/" method="post">
         {% csrf_token %}
         <div class="hc-post-form-input">
-          名称<br>
+          <div>名称</div>
           <input type="text" name="username" maxlength="50">
         </div>
         <div class="hc-post-form-input">
-          Email<br>
+          <div>Email</div>
           <input type="text" name="email" maxlength="50">
         </div>
         <div class="hc-post-form-input">
-          标题<br>
+          <div>标题</div>
           <input type="text" name="title" maxlength="50">
         </div>
         <div class="hc-post-form-input">
-          正文<br>
+          <div>正文</div>
           <textarea name="text" rows="10" cols="30"></textarea>
         </div>
-        <input type="submit" value="提交">
+        <div class="hc-post-form-submit">
+          <input type="submit" value="提交">
+        </div>
       </form>
     </div>
 

@@ -1,0 +1,33 @@
+#hc-post {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 50px;
+}
+
+.hc-post-form-input {
+    white-space: nowrap;
+    margin-top: 5px;
+}
+
+.hc-post-form-input div {
+    width: 20%;
+}
+
+.hc-post-form-input input, .hc-post-form-input textarea {
+    width: 80%;
+}
+
+.hc-post-form-input input, .hc-post-form-input div, .hc-post-form-input textarea {
+    display: inline-block;
+}
+
+.hc-post-form-submit {
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.hc-post-form-submit input {
+    width: 10%;
+}
