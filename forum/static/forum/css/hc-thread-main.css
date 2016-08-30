@@ -89,6 +89,8 @@ body {
 	display: inline-block;
 	height: 100%;
 	width: 100%;
+	padding: 0 8px;
+	box-sizing: border-box;
 	text-decoration: none;
 }
 
@@ -104,6 +106,8 @@ body {
 
 .hc-page-disabled span {
 	background-color: #e7e9ea;
+	padding: 0 8px;
+	box-sizing: border-box;
 	color: #989898;
 }
 
