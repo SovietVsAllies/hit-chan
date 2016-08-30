@@ -6,12 +6,11 @@
 }
 
 .hc-post-form-input {
-    white-space: nowrap;
     margin-top: 5px;
 }
 
 .hc-post-form-input div {
-    width: 20%;
+    width: 10%;
 }
 
 .hc-post-form-input input, .hc-post-form-input textarea {
