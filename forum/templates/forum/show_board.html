@@ -12,8 +12,10 @@
       font-size: 100%;
     }
   </style>
+  <script src="https://use.fontawesome.com/ed6f611998.js"></script>
   {% load static %}
   <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-menu-style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-top-bar.css' %}">
   <script type="text/javascript" src="{% static 'forum/js/hc-menu-loader.js' %}">
   </script>
   <script type="text/javascript" src="{% static 'forum/js/hc-thread-list-loader.js' %}">
@@ -22,12 +24,14 @@
   </script>
 </head>
 <body onload="load()">
+  <div class="hc-top-bar">
+    <h1>H I T C h a n !</h1>
+    <a href="/forum/"></a>
+  </div>
 
   <div id="hc-menu">
+    <h2 class="category">板块分区</h2>
     <ul id="hc-menu-content">
-      <li id="hc-menu-homepage">
-        <a href="/forum/">首页</a>
-      </li>
     </ul>
   </div>
 

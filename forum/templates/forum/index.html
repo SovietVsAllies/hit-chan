@@ -12,18 +12,25 @@
       font-size: 100%;
     }
   </style>
+  <script src="https://use.fontawesome.com/ed6f611998.js"></script>
   {% load static %}
   <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-menu-style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-top-bar.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'forum/static/forum/css/font-awesome-4.6.3/css/font-awesome.min.css' %}">
   <script type="text/javascript" src="{% static 'forum/js/hc-menu-loader.js' %}"></script>
 </head>
 <body onload="loadHcMenu()">
-
+  <div class="hc-top-bar">
+    <h1>H I T C h a n !</h1>
+    <a href="/forum/"></a>
+  </div>
   <div id="hc-menu">
+    <h2 class="category">板块分区</h2>
     <ul id="hc-menu-content">
     </ul>
   </div>
 
-  <div id="hc-content" style="text-align:center;">
+  <div class="hc-content" style="text-align:center;">
     <h2>
       <font color="#CC0000">“人，是会思考的芦苇。”——帕斯卡，《思想录》</font>
     </h2>
