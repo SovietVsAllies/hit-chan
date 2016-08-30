@@ -11,12 +11,10 @@ function generatePageNavigation(currentPage, maxPage) {
     if (pageStart > 1) {
         item = document.createElement("li");
         item.className = "hc-page-enabled";
-        span = document.createElement("span");
         hyperlink = document.createElement("a");
         hyperlink.setAttribute("href", "../1/");
         hyperlink.innerHTML = "首页";
-        span.appendChild(hyperlink);
-        item.appendChild(span);
+        item.appendChild(hyperlink);
         pageNavigation.appendChild(item);
     }
     // Create a button to the previous page.
@@ -29,12 +27,10 @@ function generatePageNavigation(currentPage, maxPage) {
         pageNavigation.appendChild(item);
     } else {
         item.className = "hc-page-enabled";
-        span = document.createElement("span");
         hyperlink = document.createElement("a");
         hyperlink.setAttribute("href", "../" + (currentPage - 1) + "/");
         hyperlink.innerHTML = "上一页";
-        span.appendChild(hyperlink);
-        item.appendChild(span);
+        item.appendChild(hyperlink);
         pageNavigation.appendChild(item);
     }
     // Create buttons with page number on.
@@ -49,12 +45,10 @@ function generatePageNavigation(currentPage, maxPage) {
             pageNavigation.appendChild(item);
         } else {
             item.className = "hc-page-enabled";
-            span = document.createElement("span");
             hyperlink = document.createElement("a");
             hyperlink.setAttribute("href", "../" + i + "/");
             hyperlink.innerHTML = i;
-            span.appendChild(hyperlink);
-            item.appendChild(span);
+            item.appendChild(hyperlink);
             pageNavigation.appendChild(item);
         }
     }
@@ -68,24 +62,20 @@ function generatePageNavigation(currentPage, maxPage) {
         pageNavigation.appendChild(item);
     } else {
         item.className = "hc-page-enabled";
-        span = document.createElement("span");
         hyperlink = document.createElement("a");
         hyperlink.setAttribute("href", "../" + (currentPage + 1) + "/");
         hyperlink.innerHTML = "下一页";
-        span.appendChild(hyperlink);
-        item.appendChild(span);
+        item.appendChild(hyperlink);
         pageNavigation.appendChild(item);
     }
     // Create a button to the last page if necessary.
     if (pageEnd != maxPage) {
         item = document.createElement("li");
         item.className = "hc-page-enabled";
-        span = document.createElement("span");
         hyperlink = document.createElement("a");
         hyperlink.setAttribute("href", "../" + maxPage + "/");
         hyperlink.innerHTML = "末页";
-        span.appendChild(hyperlink);
-        item.appendChild(span);
+        item.appendChild(hyperlink);
         pageNavigation.appendChild(item);
     }
 }
