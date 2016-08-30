@@ -65,7 +65,7 @@ function loadThreadList(boardId, page) {
                 list.appendChild(document.createElement("hr"));
             }
             generatePageNavigation(page, board.page_count);
-            document.getElementById("title").innerHTML = board.name + "-匿名版-hitchan";
+            document.getElementById("title").innerHTML = board.name + "-匿名版-HitChan";
         }
     }
     xmlHttp.open("GET", "/forum/api/show_board/?id=" + boardId + "&page=" + page, true);

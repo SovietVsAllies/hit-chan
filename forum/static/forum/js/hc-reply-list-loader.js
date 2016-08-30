@@ -1,7 +1,6 @@
 "use script";
 
 function loadReplyList(threadId, page) {
-
 	var xmlHttp = new XMLHttpRequest();
 	xmlHttp.onreadystatechange = function() {
 		var i;
@@ -13,6 +12,9 @@ function loadReplyList(threadId, page) {
 		var threadAndReplies;
         var d;
         var replyContent;
+        var quote;
+        var ruleBeforeReplies;
+        var ruleBetweenReplies;
 		var list = document.getElementById("hc-threadANDreply-list");
 		if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
 			d = new Date();
@@ -25,26 +27,35 @@ function loadReplyList(threadId, page) {
             threadInfo.className = "hc-thread-info";
 
             span = document.createElement("span");
+            quote = document.createElement("a");
+            quote.className = "quote-before-title";
             span.className = "hc-thread-info-title";
-            span.innerHTML = threadAndReplies.title;
+            span.innerHTML = threadAndReplies.title + "&nbsp";
+            threadInfo.appendChild(quote);
             threadInfo.appendChild(span);
 
             span = document.createElement("span");
             span.className = "hc-thread-info-username";
-            span.innerHTML = threadAndReplies.username;
+            span.innerHTML = threadAndReplies.username + "&nbsp" + "&nbsp";
             threadInfo.appendChild(span);
 
             span = document.createElement("span");
             span.className = "hc-thread-info-time";
             d.setTime(Date.parse(threadAndReplies.created_at));
-            span.innerHTML = d.getHours() + ':' + d.getMinutes() + ' ' + 
-                        d.getFullYear() + '-' + (d.getMonth() + 1) +
-                        '-' + d.getDate();
+            if (d.getMinutes() < 10) {
+                span.innerHTML = d.getHours() + ':0' + d.getMinutes() + "&nbsp" +
+                    "&nbsp" + d.getFullYear() + '-' + (d.getMonth() + 1) +
+                    '-' + d.getDate() + "&nbsp" + "&nbsp";
+            } else {
+                span.innerHTML = d.getHours() + ':' + d.getMinutes() + "&nbsp" +
+                    "&nbsp" + d.getFullYear() + '-' + (d.getMonth() + 1) +
+                    '-' + d.getDate() + "&nbsp" + "&nbsp";
+            }
             threadInfo.appendChild(span);
 
             span = document.createElement("span");
             span.className = "hc-thread-info-uid";
-            span.innerHTML = threadAndReplies.user;
+            span.innerHTML = "UID: " + threadAndReplies.user;
             threadInfo.appendChild(span);
 
             item.appendChild(threadInfo);
@@ -55,7 +66,9 @@ function loadReplyList(threadId, page) {
             item.appendChild(threadContent);
 
             list.appendChild(item);
-            list.appendChild(document.createElement("hr"));
+            ruleBeforeReplies = document.createElement("hr");
+            ruleBeforeReplies.className = "rule-before-replies";
+            list.appendChild(ruleBeforeReplies);
 
             length = threadAndReplies.replies.length;
             for (i = 0; i < length; i++) {
@@ -65,22 +78,34 @@ function loadReplyList(threadId, page) {
 	            replyInfo = document.createElement("div");
 	            replyInfo.className = "hc-reply-info";
 
+                span = document.createElement("span");
+                span.className = "hc-reply-info-title";
+                span.innerHTML = threadAndReplies.replies[i].title + "&nbsp";
+                replyInfo.appendChild(span);
+
 	            span = document.createElement("span");
 	            span.className = "hc-reply-info-username";
-            	d.setTime(Date.parse(threadAndReplies.replies[i].created_at));
-            	span.innerHTML = d.getHours() + ':' + d.getMinutes() + ' ' + 
-                        d.getFullYear() + '-' + (d.getMonth() + 1) +
-                        '-' + d.getDate();
+                span.innerHTML = threadAndReplies.replies[i].username + "&nbsp"
+                        + "&nbsp";
 	            replyInfo.appendChild(span);
 
 	            span = document.createElement("span");
 	            span.className = "hc-reply-info-time";
-	            span.innerHTML = threadAndReplies.replies[i].created_at;
+                d.setTime(Date.parse(threadAndReplies.replies[i].created_at));
+                if (d.getMinutes() < 10) {
+                    span.innerHTML = d.getHours() + ':0' + d.getMinutes() + "&nbsp" +
+                        "&nbsp" + d.getFullYear() + '-' + (d.getMonth() + 1) +
+                        '-' + d.getDate() + "&nbsp" + "&nbsp";
+                } else {
+                    span.innerHTML = d.getHours() + ':' + d.getMinutes() + "&nbsp" +
+                        "&nbsp" + d.getFullYear() + '-' + (d.getMonth() + 1) +
+                        '-' + d.getDate() + "&nbsp" + "&nbsp";
+                }
 	            replyInfo.appendChild(span);
 
 	            span = document.createElement("span");
 	            span.className = "hc-reply-info-uid";
-	            span.innerHTML = threadAndReplies.replies[i].user;
+	            span.innerHTML = "UID: " + threadAndReplies.replies[i].user;
 	            replyInfo.appendChild(span);
 
 	            item.appendChild(replyInfo);
@@ -91,7 +116,9 @@ function loadReplyList(threadId, page) {
 	            item.appendChild(replyContent);
 
 	            list.appendChild(item);
-                list.appendChild(document.createElement("hr"));
+                ruleBetweenReplies = document.createElement("hr");
+                ruleBetweenReplies.className = "rule-between-replies";
+                list.appendChild(ruleBetweenReplies);
             }
             if (threadAndReplies.reply_count <= 0) {
             	generatePageNavigation(page, 1);

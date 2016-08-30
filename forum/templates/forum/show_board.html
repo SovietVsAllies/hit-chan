@@ -7,15 +7,16 @@
     * {
       margin: 0;
       padding: 0;
-      border: 0;
       outline: 0;
       font-size: 100%;
     }
   </style>
   <script src="https://use.fontawesome.com/ed6f611998.js"></script>
   {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-thread-main.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-menu-style.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-top-bar.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-thread-list.css' %}">
   <script type="text/javascript" src="{% static 'forum/js/hc-menu-loader.js' %}">
   </script>
   <script type="text/javascript" src="{% static 'forum/js/hc-thread-list-loader.js' %}">
@@ -30,40 +31,43 @@
   </div>
 
   <div id="hc-menu">
-    <h2 class="category">板块分区</h2>
+    <h2 class="category">&nbsp板块分区</h2>
     <ul id="hc-menu-content">
     </ul>
   </div>
 
-  <div id="hc-post">
-    <form id="hc-post-form" action="/forum/api/post_thread/" method="post">
-      {% csrf_token %}
-      <div class="hc-post-form-input">
-        名称<br>
-        <input type="text" name="username" maxlength="50">
-      </div>
-      <div class="hc-post-form-input">
-        Email<br>
-        <input type="text" name="email" maxlength="50">
-      </div>
-      <div class="hc-post-form-input">
-        标题<br>
-        <input type="text" name="title" maxlength="50">
-      </div>
-      <div class="hc-post-form-input">
-        正文<br>
-        <textarea name="text" rows="10" cols="30"></textarea>
-      </div>
-      <input type="submit" value="提交">
-    </form>
-  </div>
+  <div class="main">
 
-  <div id="hc-thread-list">
-  </div>
-  
-  <ul id="hc-page-navigation">
-  </ul>
+    <div id="hc-thread-list">
+    </div>
 
+    <ul id="hc-page-navigation">
+    </ul>
+
+    <div id="hc-post">
+      <form id="hc-post-form" action="/forum/api/post_thread/" method="post">
+        {% csrf_token %}
+        <div class="hc-post-form-input">
+          名称<br>
+          <input type="text" name="username" maxlength="50">
+        </div>
+        <div class="hc-post-form-input">
+          Email<br>
+          <input type="text" name="email" maxlength="50">
+        </div>
+        <div class="hc-post-form-input">
+          标题<br>
+          <input type="text" name="title" maxlength="50">
+        </div>
+        <div class="hc-post-form-input">
+          正文<br>
+          <textarea name="text" rows="10" cols="30"></textarea>
+        </div>
+        <input type="submit" value="提交">
+      </form>
+    </div>
+
+  </div>
   <a href="#">回到顶部</a>
 
   <script type="text/javascript">

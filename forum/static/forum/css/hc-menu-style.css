@@ -3,16 +3,30 @@
 	padding: 0;
 	margin: 0;
 	top: 2.4em;
-	width: 11em;
+	width: 13%;
 	height: 100%;
 	border-top: 0.1em solid gray;
 	background-color: #f1f1f1;
 }
 
+.category {
+	display: inline-block;
+	height: 1.7em;
+	width: 100%;
+	margin: 0;
+	font-family: sans-serif;
+	background-color: #663366;
+	color: #f1f1f1;
+	font-size: 1.5em;
+	line-height: 1.7em;
+	white-space: nowrap;
+	border-bottom: 0.8px solid white;
+}
+
 #hc-menu-content {
+	border: 0;
 	margin: 0;
 	padding: 0;
-	border: 0;
 	overflow: auto;
 }
 
@@ -29,10 +43,8 @@
 	padding-left: 1.7em;
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
-	vertical-align: middle;
 	letter-spacing: 0.2em;
 	color: #000;
-	display: block;
 	text-decoration: none;
 }
 
@@ -44,14 +56,4 @@
 #hc-menu-content > li > a.active {
 	color: white;
 	background-color: #da70d6;
-}
-
-.category {
-	background-color: #663366;
-	color: #f1f1f1;
-	font-size: 1.5em;
-	margin: 0;
-	padding-left: 0.3em;
-	padding-top: 0.3em;
-	padding-bottom: 0.3em;
 }
