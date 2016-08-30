@@ -6,11 +6,19 @@ body {
 	font-family: sans-serif !important;
 	z-index: 0;
 	position: absolute;
-	margin-top: 6em;
+	margin-top: 3em;
 	width: 86%;
 	left: 14%;
 }
 
+/* Title style */
+
+#hc-board-title {
+	text-align: center;
+	font-size: 3em;
+	font-weight: bold;
+	color: #330033;
+}
 /* List style */
 
 #hc-thread-list {
@@ -46,7 +54,6 @@ body {
 
 #hc-page-navigation {
 	display: block;
-	font-family: sans-serif;
 	list-style-type: none;
 	margin: 2em 1em;
 	padding: 0;

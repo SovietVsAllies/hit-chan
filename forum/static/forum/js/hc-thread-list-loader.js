@@ -74,6 +74,7 @@ function loadThreadList(boardId, page) {
                 list.appendChild(ruleBetweenThreads);
             }
             generatePageNavigation(page, board.page_count);
+            document.getElementById("hc-board-title").innerHTML = board.name;
             document.getElementById("title").innerHTML = board.name + "-匿名版-HitChan";
         }
     }
