@@ -5,10 +5,11 @@
 	background-color: black;
 	height: 2.4em;
 	width: 100%;
+	overflow: hidden;
 }
 
 .hc-top-bar h1 {
-	display: inline;
+	display: inline-block;
 	position: absolute;
 	left: 2em;
 	width: 20%;

@@ -3,7 +3,7 @@ body {
 }
 
 .main {
-	font-family: sans-serif;
+	font-family: sans-serif !important;
 	z-index: 0;
 	position: absolute;
 	margin-top: 6em;
@@ -90,7 +90,6 @@ body {
 
 #hc-page-navigation {
 	display: block;
-	font-family: sans-serif;
 	list-style-type: none;
 	margin: 2em 1em;
 	padding: 0;
