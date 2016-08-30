@@ -53,7 +53,7 @@ function loadThreadList(boardId, page) {
 
                 span = document.createElement("span");
                 span.className = "hc-thread-info-uid";
-                span.innerHTML = "UID: " + threads[i].user;
+                span.innerHTML = "UID: " + threads[i].user + "&nbsp" + "&nbsp";
                 threadInfo.appendChild(span);
 
                 hyperlink = document.createElement("a");
