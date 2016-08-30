@@ -1,0 +1,18 @@
+.main {
+	z-index: 0;
+	position: absolute;
+	margin-top: 2.5em;
+	width: 87%;
+	left: 13%;
+	overflow-y: auto;
+}
+
+#hc-thread-list {
+}
+
+#hc-page-navigation {
+}
+
+#hc-post {
+
+}
