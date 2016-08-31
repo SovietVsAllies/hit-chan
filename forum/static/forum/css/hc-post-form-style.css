@@ -7,14 +7,20 @@
 
 .hc-post-form-input {
     margin-top: 5px;
+    height: 19px;
+    position: relative;
 }
 
 .hc-post-form-input div {
-    width: 10%;
+    width: 15%;
+    position: absolute;
+    left: 0;
 }
 
 .hc-post-form-input input, .hc-post-form-input textarea {
     width: 80%;
+    position: absolute;
+    left: 15%;
 }
 
 .hc-post-form-input input, .hc-post-form-input div, .hc-post-form-input textarea {
