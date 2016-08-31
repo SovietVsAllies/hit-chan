@@ -27,6 +27,8 @@
 	color: white !important;
 	text-align: center;
 	white-space: nowrap;
+	transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;	
 }
 
 .hc-top-bar a::before {
