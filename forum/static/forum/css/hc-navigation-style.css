@@ -5,6 +5,7 @@
 	border: 0;
 	margin: 2em 1em;
 	list-style-type: none;
+	font-family: "Microsoft YaHei" sans-serif;
 }
 
 #hc-page-navigation li {
@@ -22,6 +23,7 @@
 	display: inline-block;
 	height: 100%;
 	width: 100%;
+		box-shadow: 1px 1px 3px gray;
 }
 
 #hc-page-navigation a {
@@ -31,6 +33,7 @@
 	padding: 0 8px;
 	box-sizing: border-box;
 	text-decoration: none;
+		box-shadow: 1px 1px 2.5px gray;
 }
 
 .hc-page-enabled a {

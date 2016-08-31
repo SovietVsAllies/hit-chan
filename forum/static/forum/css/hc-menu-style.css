@@ -5,9 +5,8 @@
 	padding: 0;
 	margin: 0;
 	top: 2.4em;
-	border-top: 0.1em solid gray;
 	background-color: #f1f1f1;
-	font-family: sans-serif !important;
+	font-family: "Microsoft YaHei" sans-serif !important;
     overflow: auto;
 }
 
@@ -15,13 +14,13 @@
 	display: inline-block;
 	height: 1.7em;
 	width: 100%;
-	border-bottom: 1px solid gray;
 	margin: 0;
 	background-color: #663366;
 	color: #f1f1f1;
 	font-size: 1.5em;
 	line-height: 1.7em;
 	white-space: nowrap;
+	box-shadow: 0 2px 2px #330033;
 }
 
 #hc-menu-content {
@@ -33,7 +32,6 @@
 
 #hc-menu-content > li {
 	padding: 0;
-	border-bottom: 0.1em solid white;
 	list-style-type: none;
 }
 
