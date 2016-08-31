@@ -10,7 +10,6 @@
     position: relative;
     height: 30px;
     margin-top: 1em;
-    border-radius: 0.5em;
 }
 
 .hc-post-form-input div {
@@ -27,6 +26,8 @@
     padding: 0;
     width: 80%;
     left: 15%;
+    border: 0.8px solid #330033;
+    border-radius: 5px;
 }
 
 .hc-post-form-input input, .hc-post-form-input div, .hc-post-form-input textarea {
