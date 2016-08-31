@@ -53,4 +53,6 @@
 
 .hc-post-form-submit input {
     padding: 0 1em;
+    background-color: #996699;
+    color: white;
 }

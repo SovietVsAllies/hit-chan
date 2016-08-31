@@ -41,6 +41,8 @@
 .hc-page-enabled a:hover {
 	background-color: #663366;
 	color: #f1f1f1;
+	transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;
 }
 
 .hc-page-disabled span {
@@ -48,6 +50,7 @@
 	background-color: #e7e9ea;
 	box-sizing: border-box;
 	color: #989898;
+	cursor: not-allowed;
 }
 
 .hc-page-onload span {
