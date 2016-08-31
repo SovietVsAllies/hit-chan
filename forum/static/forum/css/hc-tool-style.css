@@ -3,6 +3,7 @@
     right: 50px;
     bottom: 180px;
     color: #996699;
+    text-shadow: 0 4px 3px #999999;
     -webkit-transition-duration: 0.2s;
     transition-duration: 0.2s;
 }
