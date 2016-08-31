@@ -57,3 +57,26 @@ body {
     border: 0;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
+
+/* Reply Button Style*/
+
+.hc-thread-info a {
+	display: inline-block;
+	width: 3em;
+	background-color: #f4511e;
+	color: white;
+	border-radius: 8px;
+	box-shadow: 2px 3px #999;
+	text-decoration: none;
+	text-align: center;
+}
+
+.hc-thread-info a:hover {
+	background-color: #d24000;
+}
+
+.hc-thread-info a:active {
+	background-color: #d24000;
+	box-shadow: 1.3px 2.5px #666;
+	transform: translate(1px, 1.5px);
+}
