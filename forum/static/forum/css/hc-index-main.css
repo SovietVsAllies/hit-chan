@@ -10,8 +10,9 @@
 
 #hc-index-main h1 {
 	font-size: 2.5em;
-	color: #330033;
 	font-weight: bold;
+	color: #330033;
+	text-shadow: 2px 2px 2px #9999cc;
 }
 
 #hc-index-main p {
