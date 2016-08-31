@@ -28,7 +28,7 @@
 	white-space: nowrap;
 }
 
-.hc-top-bar a:before {
+.hc-top-bar a::before {
 	font-family: FontAwesome;
 	font-size: 1.5em;
 	content: "\f015";

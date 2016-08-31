@@ -41,6 +41,7 @@
 }
 
 .hc-post-form-input textarea {
+    padding: 5px;
     resize: none;
 }
 

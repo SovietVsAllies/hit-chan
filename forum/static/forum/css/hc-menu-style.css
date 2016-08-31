@@ -46,6 +46,8 @@
 	letter-spacing: 0.2em;
 	color: #000;
 	text-decoration: none;
+	transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;	
 }
 
 #hc-menu-content > li > a:hover {
