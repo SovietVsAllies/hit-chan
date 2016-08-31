@@ -3,4 +3,11 @@
     right: 10px;
     bottom: 180px;
     color: #996699;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+}
+
+.hc-tool:hover {
+	color: white;
+	text-shadow: 0 0 5px #996699;
 }
