@@ -60,6 +60,7 @@
 }
 
 .hc-post-form-input textarea {
+    font-size: 1.4em;
     padding: 6px;
     resize: none;
 }
@@ -108,4 +109,5 @@ input[type="submit"]:hover {
 .hc-post-form-submit input:disabled {
     background-color: #989898;
     box-shadow: none;
+    cursor: not-allowed;
 }
