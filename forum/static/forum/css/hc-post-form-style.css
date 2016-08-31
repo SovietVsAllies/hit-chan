@@ -1,7 +1,7 @@
 #hc-post {
     margin-top: 32px;
     padding-bottom: 50px;
-    font-family: "Microsoft YaHei" sans-serif;
+    font-family: "Microsoft YaHei", sans-serif;
     background: #f3eff4;
     background: -webkit-linear-gradient(#f3eff4, #f2ebf2);
     background: -o-linear-gradient(#f3eff4, #f2ebf2);
