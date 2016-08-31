@@ -38,6 +38,7 @@
     height: 100%;
     width: 80%;
     resize: none;
+    box-sizing: border-box;
 }
 
 .hc-post-form-submit {
