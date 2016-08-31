@@ -12,6 +12,10 @@
     margin-top: 1em;
 }
 
+.hc-post-form-input input, .hc-post-form-input div, .hc-post-form-input textarea {
+    display: inline-block;
+}
+
 .hc-post-form-input div {
     position: absolute;
     left: 0;
@@ -22,23 +26,22 @@
 
 .hc-post-form-input input, .hc-post-form-input textarea {
     position: absolute;
-    margin: 0;
-    padding: 0;
-    width: 80%;
     left: 15%;
+    width: 80%;
+    height: 100%;
+    padding: 1px 5px;
+    margin: 0;
+    outline: 0;
     border: 0.8px solid #330033;
     border-radius: 5px;
-}
-
-.hc-post-form-input input, .hc-post-form-input div, .hc-post-form-input textarea {
-    display: inline-block;
-}
-
-.hc-post-form-input textarea{
-    height: 100%;
-    width: 80%;
-    resize: none;
     box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.hc-post-form-input textarea {
+    resize: none;
 }
 
 .hc-post-form-submit {
