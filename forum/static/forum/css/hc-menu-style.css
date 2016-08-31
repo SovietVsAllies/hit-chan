@@ -1,10 +1,10 @@
 #hc-menu {
 	position: fixed;
+	width: 13%;
+	height: 100%;
 	padding: 0;
 	margin: 0;
 	top: 2.4em;
-	width: 13%;
-	height: 100%;
 	border-top: 0.1em solid gray;
 	background-color: #f1f1f1;
 	font-family: sans-serif !important;
@@ -15,19 +15,19 @@
 	display: inline-block;
 	height: 1.7em;
 	width: 100%;
+	border-bottom: 1px solid gray;
 	margin: 0;
 	background-color: #663366;
 	color: #f1f1f1;
 	font-size: 1.5em;
 	line-height: 1.7em;
 	white-space: nowrap;
-	border-bottom: 1px solid gray;
 }
 
 #hc-menu-content {
+	padding: 0;
 	border: 0;
 	margin: 0;
-	padding: 0;
 	overflow: auto;
 }
 
@@ -39,21 +39,21 @@
 
 #hc-menu-content > li > a {
 	display: block;
-	font-size: 1em;
 	padding-left: 1.7em;
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
+	font-size: 1em;
 	letter-spacing: 0.2em;
 	color: #000;
 	text-decoration: none;
 }
 
 #hc-menu-content > li > a:hover {
+	background-color: #cccccc;	
 	color: white;
-	background-color: #cccccc;
 }
 
 #hc-menu-content > li > a.active {
-	color: white;
 	background-color: #da70d6;
+	color: white;
 }

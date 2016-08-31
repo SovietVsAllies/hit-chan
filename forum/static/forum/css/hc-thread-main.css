@@ -33,9 +33,9 @@ body {
 }
 
 .hc-thread-info-title {
-	color: #996699;
 	font-size: 1.1em;
 	font-weight: bold;
+	color: #996699;
 }
 
 .hc-thread-content {
@@ -45,14 +45,14 @@ body {
 }
 
 .hc-thread-info-username {
-	color: #330033;
 	font-size: 1.1em;
+	color: #330033;
 }
 
 .rule-between-threads{
 	display: block;
+	height: 1px;
     margin: 0 2.7;
     border: 0;
-    height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }

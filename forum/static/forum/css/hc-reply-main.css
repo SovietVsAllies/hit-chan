@@ -49,7 +49,8 @@ body {
 }
 
 .rule-before-replies:before {
-	display: block; content: "";
+	display: block;
+	content: "";
 	height: 30px;
 	margin-top: -31px;
 	border-style: solid;
@@ -65,9 +66,9 @@ body {
 }
 
 .hc-reply-info-title {
-	color: #996699;
 	font-size: 1.1em;
 	font-weight: bold;
+	color: #996699;
 }
 
 .hc-reply-content {
@@ -84,8 +85,8 @@ body {
 
 .rule-between-replies{
 	display: block;
+	height: 1px;
+	border: 0;
     margin: 0 2.7;
-    border: 0;
-    height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }

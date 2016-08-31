@@ -1,8 +1,8 @@
 #hc-post {
     width: 40%;
+    padding-bottom: 50px;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 50px;
 }
 
 .hc-post-form-input {
@@ -22,8 +22,8 @@
 }
 
 .hc-post-form-submit {
-    margin-top: 10px;
     width: 100%;
+    margin-top: 10px;
     text-align: center;
 }
 

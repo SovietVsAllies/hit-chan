@@ -1,10 +1,10 @@
 #hc-page-navigation {
 	display: block;
-	list-style-type: none;
-	margin: 2em 1em;
+	height: 1.8em;
 	padding: 0;
 	border: 0;
-	height: 1.8em;
+	margin: 2em 1em;
+	list-style-type: none;
 }
 
 #hc-page-navigation li {
@@ -44,8 +44,8 @@
 }
 
 .hc-page-disabled span {
-	background-color: #e7e9ea;
 	padding: 0 8px;
+	background-color: #e7e9ea;
 	box-sizing: border-box;
 	color: #989898;
 }
