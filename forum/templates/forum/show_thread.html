@@ -53,9 +53,9 @@
     <div id="hc-post">
       <form id="hc-post-form" action="/forum/api/post_thread/" method="post">
         {% csrf_token %}
-        <div class="hc-post-form-input">
+        <h1 id="hc-post-title">
           回复到&nbsp&nbspNo.<span id="threadId" maxlength="50"></span>
-        </div>
+        </h1>
         <div class="hc-post-form-input">
           <div>名称</div>
           <input type="text" name="username" maxlength="50">

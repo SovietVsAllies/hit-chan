@@ -1,15 +1,31 @@
 #hc-post {
-    width: 40%;
+    margin-top: 32px;
     padding-bottom: 50px;
-    margin-left: auto;
-    margin-right: auto;
     font-family: "Microsoft YaHei" sans-serif;
+    background: #f3eff4;
+    background: -webkit-linear-gradient(#f3eff4, #f2ebf2);
+    background: -o-linear-gradient(#f3eff4, #f2ebf2);
+    background: -moz-linear-gradient(#f3eff4, #f2ebf2);
+    background: linear-gradient(#f3eff4, #f2ebf2);
 }
+
+#hc-post-title {
+    padding-top: 0.3em;
+    padding-left: 4.7em;
+    padding-bottom: 0.6em;
+    font-size: 2.1em;
+    font-weight: bold;
+    text-shadow: 1.7px 1.7px 1.5px gray;
+}
+
 
 .hc-post-form-input {
     position: relative;
+    width: 40%;
     height: 30px;
     margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hc-post-form-input input, .hc-post-form-input div, .hc-post-form-input textarea {
@@ -22,6 +38,7 @@
     height: 100%;
     width: 15%;
     line-height: 30px;
+    text-shadow: 1px 1.5px 1.5px gray;
 }
 
 .hc-post-form-input input, .hc-post-form-input textarea {
@@ -32,18 +49,37 @@
     padding: 1px 5px;
     margin: 0;
     outline: 0;
-    border: 0.8px solid #330033;
+    border: 0.8px solid #cc99cc;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    box-shadow: 0 0 0.5px gray;
 }
 
 .hc-post-form-input textarea {
-    padding: 5px;
+    padding: 6px;
     resize: none;
+}
+
+.hc-post-form-input input:hover {
+    border: 0.8px solid #996699;
+}
+
+.hc-post-form-input textarea:hover {
+    border: 0.8px solid #996699;
+}
+
+.hc-post-form-input input:focus {
+    border: 0.8px solid #66ccff;
+    box-shadow: 0 0 2px #ccffff;
+}
+
+.hc-post-form-input textarea:focus {
+    border: 0.8px solid #66ccff;
+    box-shadow: 0 0 2px #ccffff;
 }
 
 .hc-post-form-submit {

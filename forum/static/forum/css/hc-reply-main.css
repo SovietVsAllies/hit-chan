@@ -5,7 +5,7 @@ body {
 .main {
 	z-index: 0;
 	position: absolute;
-	left: 14%;
+	left: 13%;
 	width: 86%;
 	margin-top: 5em;
 	font-family: "Microsoft YaHei" sans-serif !important;
@@ -14,7 +14,6 @@ body {
 /* List style */
 
 #hc-threadANDreply-list {
-	margin-left: 1.7em;
 	color: #330033;
 }
 
@@ -25,6 +24,7 @@ body {
 }
 
 .hc-thread {
+	margin-left: 2.7em;
 	margin-bottom: 1.7em;
 }
 
@@ -48,7 +48,7 @@ body {
 	border-radius: 20px;
 }
 
-.rule-before-replies:before {
+.rule-before-replies::before {
 	display: block;
 	content: "";
 	height: 30px;
@@ -61,7 +61,7 @@ body {
 
 .hc-reply {
 	margin-top: 0.9em;
-	margin-left: 2em;
+	margin-left: 4.7em;
 	margin-bottom: 1.3em;
 }
 

@@ -5,7 +5,7 @@ body {
 .main {
 	z-index: 0;
 	position: absolute;
-	left: 14%;
+	left: 13%;
 	width: 86%;
 	margin-top: 3em;
 	font-family: "Microsoft YaHei" sans-serif !important;
@@ -24,11 +24,11 @@ body {
 /* List style */
 
 #hc-thread-list {
-	margin-left: 1.7em;
 	color: #330033;
 }
 
 .hc-thread {
+	margin-left: 2.7em;
 	margin-bottom: 1.3em;
 	margin-top: 0.9em;
 }

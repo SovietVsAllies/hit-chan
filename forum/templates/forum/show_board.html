@@ -55,6 +55,7 @@
     </ul>
 
     <div id="hc-post">
+      <h1 id="hc-post-title">发表新串</h1>
       <form id="hc-post-form" action="/forum/api/post_thread/" method="post">
         {% csrf_token %}
         <div class="hc-post-form-input">
@@ -95,7 +96,6 @@
       input.setAttribute("name", "board_id");
       input.setAttribute("value", boardId);
       document.getElementById("hc-post-form").appendChild(input);
-
       loadHcMenu();
       loadThreadList(boardId, page);
     }
