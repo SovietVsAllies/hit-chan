@@ -15,6 +15,7 @@
     width: 15%;
     position: absolute;
     left: 0;
+    line-height: 19px;
 }
 
 .hc-post-form-input input, .hc-post-form-input textarea {
