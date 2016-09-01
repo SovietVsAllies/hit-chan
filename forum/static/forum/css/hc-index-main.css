@@ -1,9 +1,8 @@
 
 #hc-index-main {
-	position: absolute;
-	left: 13%;
-	width: 87%;
-	margin-top: 5em;
+	margin-left: 177px;
+	margin-top: 40px;
+	padding-top: 42px;
 	font-family: "Microsoft YaHei", sans-serif;
 	text-align: center;
 }
@@ -13,11 +12,17 @@
 	font-weight: bold;
 	color: #330033;
 	text-shadow: 2px 2px 2px #9999cc;
+
+}
+#hc-index-main img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
 }
 
 #hc-index-main p {
 	position: relative;
-	top: 1em;
+	top: 16px;
 	font-size: 1em;
 	color: #ccccff;
 }

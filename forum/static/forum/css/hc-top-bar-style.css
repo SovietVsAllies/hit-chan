@@ -2,7 +2,7 @@
 	z-index: 2;
 	position: fixed;
 	top: 0;
-	height: 2.4em;
+	height: 40px;
 	width: 100%;
 	padding: 0;
 	background-color: black;
@@ -12,21 +12,24 @@
 
 .hc-top-bar h1 {
 	display: inline-block;
-	position: absolute;
-	left: 2em;
-	width: 20%;
+	position: relative;
+	left: 32px;
+	height: 100%;
+	width: 270px;
+	line-height: 40px;
+	white-space: nowrap;
 	font-size: 2em;
 	color: white;
 }
 
 .hc-top-bar a {
-	position: absolute;
-	left: 95%;
-	height: 100%;
-	width: 2em;
-	line-height: 2.4em;
+	float: right;
+	height: 40px;
+	width: 32px;
+	margin-right: 20px;
 	color: white !important;
 	text-align: center;
+	line-height: 40px;
 	white-space: nowrap;
 	transition-duration: 0.4s;
     -webkit-transition-duration: 0.4s;	
