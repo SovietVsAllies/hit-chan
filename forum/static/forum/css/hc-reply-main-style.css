@@ -10,12 +10,12 @@ body {
 	font-family: "Microsoft YaHei", sans-serif !important;
 }
 
-/* List style */
-
+/* Text Color */
 #hc-threadANDreply-list {
 	color: #330033;
 }
 
+/* Threads */
 .quote-before-title::before {
 	font-family: FontAwesome;
 	font-size: 1.7em;
@@ -44,27 +44,7 @@ body {
 	font-size: 1.7em;
 }
 
-.rule-before-replies {
-	height: 30px;
-	border-style: solid;
-	border-color: black;
-	border-width: 1px 0 0 0;
-	border-radius: 20px;
-	-webkit-border-radius: 20px;
-}
-
-.rule-before-replies::before {
-	display: block;
-	content: "";
-	height: 30px;
-	margin-top: -31px;
-	border-style: solid;
-	border-color: black;
-	border-width: 0 0 1px 0;
-	border-radius: 20px;
-	-webkit-border-radius: 20px;
-}
-
+/* Replies */
 .hc-reply {
 	margin-top: 14.4px;
 	margin-left: 90px;
@@ -91,13 +71,4 @@ body {
 .hc-thread-info-username, .hc-thread-info-email, .hc-reply-info-username, .hc-reply-info-email {
 	color: #330033;
 	font-size: 1.1em;
-}
-
-
-.rule-between-replies{
-	display: block;
-	height: 1px;
-	border: 0;
-    margin: 0 2.7;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }

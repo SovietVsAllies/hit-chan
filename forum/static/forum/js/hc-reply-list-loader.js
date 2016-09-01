@@ -128,7 +128,7 @@ function loadReplyList(threadId, page) {
 
 	            list.appendChild(item);
                 ruleBetweenReplies = document.createElement("hr");
-                ruleBetweenReplies.className = "rule-between-replies";
+                ruleBetweenReplies.className = "rule-between-blocks";
                 list.appendChild(ruleBetweenReplies);
             }
             if (threadAndReplies.reply_count <= 0) {

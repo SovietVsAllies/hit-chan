@@ -37,10 +37,12 @@ function loadThreadList(boardId, page) {
                 span.appendChild(document.createTextNode(threads[i].username));
                 threadInfo.appendChild(span);
 
-                span = document.createElement("span");
-                span.className = "hc-thread-info-email";
-                span.appendChild(document.createTextNode(threads[i].email));
-                threadInfo.appendChild(span);
+                if (threads[i].email !== "") {
+                    span = document.createElement("span");
+                    span.className = "hc-thread-info-email";
+                    span.appendChild(document.createTextNode(threads[i].email));
+                    threadInfo.appendChild(span);
+                } 
 
                 span = document.createElement("span");
                 span.className = "hc-thread-info-time";
@@ -75,7 +77,7 @@ function loadThreadList(boardId, page) {
 
                 list.appendChild(item);
                 ruleBetweenThreads = document.createElement("hr");
-                ruleBetweenThreads.className = "rule-between-threads";
+                ruleBetweenThreads.className = "rule-between-blocks";
                 list.appendChild(ruleBetweenThreads);
             }
             generatePageNavigation(page, board.page_count);
