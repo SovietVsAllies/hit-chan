@@ -60,7 +60,8 @@
 }
 
 .hc-post-form-input textarea {
-    font-size: 1.4em;
+    font-family: "Microsoft YaHei", sans-serif;
+    font-size: 1.1em;
     padding: 6px;
     resize: none;
 }
