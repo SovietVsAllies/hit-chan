@@ -30,13 +30,13 @@ function loadReplyList(threadId, page) {
             quote = document.createElement("a");
             quote.className = "quote-before-title";
             span.className = "hc-thread-info-title";
-            span.innerHTML = threadAndReplies.title + "&nbsp";
+            span.appendChild(document.createTextNode(threadAndReplies.title));
             threadInfo.appendChild(quote);
             threadInfo.appendChild(span);
 
             span = document.createElement("span");
             span.className = "hc-thread-info-username";
-            span.innerHTML = threadAndReplies.username + "&nbsp" + "&nbsp";
+            span.appendChild(document.createTextNode(threadAndReplies.username));
             threadInfo.appendChild(span);
 
             span = document.createElement("span");
@@ -45,24 +45,24 @@ function loadReplyList(threadId, page) {
             if (d.getMinutes() < 10) {
                 span.innerHTML = d.getHours() + ':0' + d.getMinutes() + "&nbsp" +
                     "&nbsp" + d.getFullYear() + '-' + (d.getMonth() + 1) +
-                    '-' + d.getDate() + "&nbsp" + "&nbsp";
+                    '-' + d.getDate();
             } else {
                 span.innerHTML = d.getHours() + ':' + d.getMinutes() + "&nbsp" +
                     "&nbsp" + d.getFullYear() + '-' + (d.getMonth() + 1) +
-                    '-' + d.getDate() + "&nbsp" + "&nbsp";
+                    '-' + d.getDate();
             }
             threadInfo.appendChild(span);
 
             span = document.createElement("span");
             span.className = "hc-thread-info-uid";
-            span.innerHTML = "UID: " + threadAndReplies.user;
+            span.appendChild(document.createTextNode("UID: " + threadAndReplies.user));
             threadInfo.appendChild(span);
 
             item.appendChild(threadInfo);
 
             threadContent = document.createElement("div");
             threadContent.className = "hc-thread-content";
-            threadContent.innerHTML = threadAndReplies.text;
+            threadContent.appendChild(document.createTextNode(threadAndReplies.text));
             item.appendChild(threadContent);
 
             list.appendChild(item);
@@ -80,13 +80,12 @@ function loadReplyList(threadId, page) {
 
                 span = document.createElement("span");
                 span.className = "hc-reply-info-title";
-                span.innerHTML = threadAndReplies.replies[i].title + "&nbsp";
+                span.appendChild(document.createTextNode(threadAndReplies.replies[i].title));
                 replyInfo.appendChild(span);
 
 	            span = document.createElement("span");
 	            span.className = "hc-reply-info-username";
-                span.innerHTML = threadAndReplies.replies[i].username + "&nbsp"
-                        + "&nbsp";
+                span.appendChild(document.createTextNode(threadAndReplies.replies[i].username));
 	            replyInfo.appendChild(span);
 
 	            span = document.createElement("span");
@@ -95,24 +94,26 @@ function loadReplyList(threadId, page) {
                 if (d.getMinutes() < 10) {
                     span.innerHTML = d.getHours() + ':0' + d.getMinutes() + "&nbsp" +
                         "&nbsp" + d.getFullYear() + '-' + (d.getMonth() + 1) +
-                        '-' + d.getDate() + "&nbsp" + "&nbsp";
+                        '-' + d.getDate();
                 } else {
                     span.innerHTML = d.getHours() + ':' + d.getMinutes() + "&nbsp" +
                         "&nbsp" + d.getFullYear() + '-' + (d.getMonth() + 1) +
-                        '-' + d.getDate() + "&nbsp" + "&nbsp";
+                        '-' + d.getDate();
                 }
 	            replyInfo.appendChild(span);
 
 	            span = document.createElement("span");
 	            span.className = "hc-reply-info-uid";
-	            span.innerHTML = "UID: " + threadAndReplies.replies[i].user;
+	            span.appendChild(document.createTextNode(
+                        "UID: " + threadAndReplies.replies[i].user));
 	            replyInfo.appendChild(span);
 
 	            item.appendChild(replyInfo);
 
 	            replyContent = document.createElement("div");
 	            replyContent.className = "hc-reply-content";
-	            replyContent.innerHTML = threadAndReplies.replies[i].text;
+	            replyContent.appendChild(document.createTextNode(
+                        threadAndReplies.replies[i].text));
 	            item.appendChild(replyContent);
 
 	            list.appendChild(item);

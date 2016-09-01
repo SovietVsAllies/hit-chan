@@ -29,12 +29,12 @@ function loadThreadList(boardId, page) {
 
                 span = document.createElement("span");
                 span.className = "hc-thread-info-title";
-                span.innerHTML = threads[i].title + "&nbsp";
+                span.appendChild(document.createTextNode(threads[i].title));
                 threadInfo.appendChild(span);
 
                 span = document.createElement("span");
                 span.className = "hc-thread-info-username";
-                span.innerHTML = threads[i].username + "&nbsp" + "&nbsp";
+                span.appendChild(document.createTextNode(threads[i].username));
                 threadInfo.appendChild(span);
 
                 span = document.createElement("span");
@@ -43,17 +43,17 @@ function loadThreadList(boardId, page) {
                 if (d.getMinutes() < 10) {
                     span.innerHTML = d.getHours() + ':0' + d.getMinutes() + "&nbsp" +
                         "&nbsp" + d.getFullYear() + '-' + (d.getMonth() + 1) +
-                        '-' + d.getDate() + "&nbsp" + "&nbsp";
+                        '-' + d.getDate();
                 } else {
                     span.innerHTML = d.getHours() + ':' + d.getMinutes() + "&nbsp" +
                         "&nbsp" + d.getFullYear() + '-' + (d.getMonth() + 1) +
-                        '-' + d.getDate() + "&nbsp" + "&nbsp";
+                        '-' + d.getDate();
                 }
                 threadInfo.appendChild(span);
 
                 span = document.createElement("span");
                 span.className = "hc-thread-info-uid";
-                span.innerHTML = "UID: " + threads[i].user + "&nbsp" + "&nbsp";
+                span.appendChild(document.createTextNode("UID: " + threads[i].user));
                 threadInfo.appendChild(span);
 
                 hyperlink = document.createElement("a");
@@ -65,7 +65,7 @@ function loadThreadList(boardId, page) {
 
                 threadContent = document.createElement("div");
                 threadContent.className = "hc-thread-content";
-                threadContent.innerHTML = threads[i].text;
+                threadContent.appendChild(document.createTextNode(threads[i].text));
                 item.appendChild(threadContent);
 
                 list.appendChild(item);
@@ -74,8 +74,10 @@ function loadThreadList(boardId, page) {
                 list.appendChild(ruleBetweenThreads);
             }
             generatePageNavigation(page, board.page_count);
-            document.getElementById("hc-board-title").innerHTML = board.name;
-            document.getElementById("title").innerHTML = board.name + "-匿名版-HitChan";
+            document.getElementById("hc-board-title").appendChild(document.createTextNode(
+                    board.name));
+            document.getElementById("title").appendChild(document.createTextNode(
+                    board.name + "-匿名版-HitChan"));
         }
     }
     xmlHttp.open("GET", "/forum/api/show_board/?id=" + boardId + "&page=" + page, true);

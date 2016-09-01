@@ -28,6 +28,11 @@ body {
 	margin-bottom: 1.7em;
 }
 
+.hc-thread-info span {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 .hc-thread-info-title {
 	color: #996699;
 	font-size: 1.7em;
@@ -63,6 +68,11 @@ body {
 	margin-top: 0.9em;
 	margin-left: 4.7em;
 	margin-bottom: 1.3em;
+}
+
+.hc-reply-info span {
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .hc-reply-info-title {
