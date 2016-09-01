@@ -16,6 +16,9 @@ function loadHcMenu() {
             checkWhetherBoard = document.URL.split("/").slice(-4)[0];
 
             boards = JSON.parse(xmlHttp.responseText);
+            boards.sort(function(lhs, rhs) {
+                return lhs.rank - rhs.rank;
+            });
             menu = document.getElementById("hc-menu-content");
             length = boards.length;
             for (i = 0; i < length; i++) {

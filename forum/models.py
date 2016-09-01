@@ -7,6 +7,7 @@ from django.db.models import IntegerField
 from django.db.models import ForeignKey
 from django.db.models import OneToOneField
 from django.db.models import BooleanField
+from django.db.models import PositiveIntegerField
 
 
 class Post(Model):
@@ -25,6 +26,7 @@ class Post(Model):
 class Board(Model):
     name = CharField(max_length=50)
     root_post = OneToOneField(Post, on_delete=models.PROTECT)
+    rank = PositiveIntegerField(default=1)
 
 
 class User(Model):

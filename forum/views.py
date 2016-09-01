@@ -70,8 +70,7 @@ def get_board_list(request):
     boards = Board.objects.all()
     data = []
     for board in boards:
-        page_count = ceil(Post.objects.filter(parent=board.root_post).count() / 20)
-        data.append({'id': board.id, 'name': board.name, 'page_count': page_count})
+        data.append({'id': board.id, 'name': board.name, 'rank': board.rank})
     return JsonResponse(data, safe=False, json_dumps_params={'ensure_ascii': False})
 
 
