@@ -1,9 +1,9 @@
 #hc-page-navigation {
 	display: block;
-	height: 1.8em;
+	height: 28.8px;
 	padding: 0;
 	border: 0;
-	margin: 2em 1em;
+	margin: 32px 40px;
 	list-style-type: none;
 	font-family: "Microsoft YaHei", sans-serif;
 }
@@ -11,10 +11,10 @@
 #hc-page-navigation li {
 	float: left;
 	height: 100%;
-	min-width: 1.7em;
-	margin-right: 0.5em;
+	min-width: 27.2px;
+	margin-right: 8px;
 	text-align: center;
-	line-height: 1.8em;
+	line-height: 28.8px;
 	white-space: nowrap;
 }
 
@@ -22,7 +22,7 @@
 	display: inline-block;
 	height: 100%;
 	width: 100%;
-		box-shadow: 1px 1px 3px gray;
+	box-shadow: 1px 1px 3px gray;
 }
 
 #hc-page-navigation a {

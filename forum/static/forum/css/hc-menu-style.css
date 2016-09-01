@@ -1,11 +1,12 @@
 #hc-menu {
 	z-index: 1;
 	position: fixed;
-	width: 13%;
+	top: 40px;
+	left: 0;
+	width: 177px;
 	height: 100%;
 	padding: 0;
 	margin: 0;
-	top: 2.4em;
 	background-color: #f1f1f1;
 	font-family: "Microsoft YaHei", sans-serif !important;
     overflow: auto;
@@ -13,13 +14,13 @@
 
 .category {
 	display: inline-block;
-	height: 1.7em;
+	height: 40px;
 	width: 100%;
 	margin: 0;
 	background-color: #663366;
 	color: #f1f1f1;
 	font-size: 1.5em;
-	line-height: 1.7em;
+	line-height: 40px;
 	white-space: nowrap;
 	box-shadow: 0 2px 2px #330033;
 }
@@ -38,9 +39,9 @@
 
 #hc-menu-content > li > a {
 	display: block;
-	padding-left: 1.7em;
-	padding-top: 0.5em;
-	padding-bottom: 0.5em;
+	padding-left: 28px;
+	padding-top: 8px;
+	padding-bottom: 8px;
 	font-size: 1em;
 	letter-spacing: 0.2em;
 	color: #000;
