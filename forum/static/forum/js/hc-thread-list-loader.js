@@ -16,7 +16,6 @@ function loadThreadList(boardId, page) {
         var ruleBetweenThreads;
         var list = document.getElementById("hc-thread-list");
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-            d = new Date();
             board = JSON.parse(xmlHttp.responseText);
             threads = board.threads;
             length = threads.length;
@@ -44,7 +43,7 @@ function loadThreadList(boardId, page) {
 
                 span = document.createElement("span");
                 span.className = "hc-thread-info-time";
-                d.setTime(Date.parse(threads[i].created_at));
+                d = moment(threads[i].created_at, "ddd MMM DD HH:mm:ss Z YYYY").toDate();
                 if (d.getMinutes() < 10) {
                     span.innerHTML = d.getHours() + ':0' + d.getMinutes() + "&nbsp" +
                         "&nbsp" + d.getFullYear() + '-' + (d.getMonth() + 1) +

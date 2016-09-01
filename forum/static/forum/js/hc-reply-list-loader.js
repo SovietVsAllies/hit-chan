@@ -17,7 +17,6 @@ function loadReplyList(threadId, page) {
         var ruleBetweenReplies;
 		var list = document.getElementById("hc-threadANDreply-list");
 		if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-			d = new Date();
 			threadAndReplies = JSON.parse(xmlHttp.responseText);
 
 		    item = document.createElement("div");
@@ -46,7 +45,7 @@ function loadReplyList(threadId, page) {
 
             span = document.createElement("span");
             span.className = "hc-thread-info-time";
-            d.setTime(Date.parse(threadAndReplies.created_at));
+            d = moment(threadAndReplies.created_at, "ddd MMM DD HH:mm:ss Z YYYY").toDate();
             if (d.getMinutes() < 10) {
                 span.innerHTML = d.getHours() + ':0' + d.getMinutes() + "&nbsp" +
                     "&nbsp" + d.getFullYear() + '-' + (d.getMonth() + 1) +
@@ -100,7 +99,8 @@ function loadReplyList(threadId, page) {
 
 	            span = document.createElement("span");
 	            span.className = "hc-reply-info-time";
-                d.setTime(Date.parse(threadAndReplies.replies[i].created_at));
+                d = moment(threadAndReplies.replies[i].created_at, "ddd MMM DD HH:mm:ss Z YYYY")
+                        .toDate();
                 if (d.getMinutes() < 10) {
                     span.innerHTML = d.getHours() + ':0' + d.getMinutes() + "&nbsp" +
                         "&nbsp" + d.getFullYear() + '-' + (d.getMonth() + 1) +
