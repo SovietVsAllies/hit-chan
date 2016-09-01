@@ -86,7 +86,7 @@ body {
 	font-size: 1em;
 }
 
-.hc-thread-info-username, .hc-reply-info-username {
+.hc-thread-info-username, .hc-thread-info-email, .hc-reply-info-username, .hc-reply-info-email {
 	color: #330033;
 	font-size: 1.1em;
 }

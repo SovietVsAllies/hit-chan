@@ -50,7 +50,7 @@ body {
 	font-size: 1em;
 }
 
-.hc-thread-info-username {
+.hc-thread-info-username, .hc-thread-info-email {
 	font-size: 1.1em;
 	color: #330033;
 }

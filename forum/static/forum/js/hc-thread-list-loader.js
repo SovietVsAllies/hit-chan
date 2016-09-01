@@ -38,6 +38,11 @@ function loadThreadList(boardId, page) {
                 threadInfo.appendChild(span);
 
                 span = document.createElement("span");
+                span.className = "hc-thread-info-email";
+                span.appendChild(document.createTextNode(threads[i].email));
+                threadInfo.appendChild(span);
+
+                span = document.createElement("span");
                 span.className = "hc-thread-info-time";
                 d.setTime(Date.parse(threads[i].created_at));
                 if (d.getMinutes() < 10) {

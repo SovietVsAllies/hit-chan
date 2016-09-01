@@ -40,6 +40,11 @@ function loadReplyList(threadId, page) {
             threadInfo.appendChild(span);
 
             span = document.createElement("span");
+            span.className = "hc-thread-info-email";
+            span.appendChild(document.createTextNode(threadAndReplies.email));
+            threadInfo.appendChild(span);
+
+            span = document.createElement("span");
             span.className = "hc-thread-info-time";
             d.setTime(Date.parse(threadAndReplies.created_at));
             if (d.getMinutes() < 10) {
@@ -86,6 +91,11 @@ function loadReplyList(threadId, page) {
 	            span = document.createElement("span");
 	            span.className = "hc-reply-info-username";
                 span.appendChild(document.createTextNode(threadAndReplies.replies[i].username));
+	            replyInfo.appendChild(span);
+
+                span = document.createElement("span");
+	            span.className = "hc-reply-info-email";
+                span.appendChild(document.createTextNode(threadAndReplies.replies[i].email));
 	            replyInfo.appendChild(span);
 
 	            span = document.createElement("span");
