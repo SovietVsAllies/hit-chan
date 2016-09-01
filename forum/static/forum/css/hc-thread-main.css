@@ -33,6 +33,11 @@ body {
 	margin-top: 14.4px;
 }
 
+.hc-thread-info span {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 .hc-thread-info-title {
 	font-size: 1.1em;
 	font-weight: bold;
@@ -45,7 +50,7 @@ body {
 	font-size: 1em;
 }
 
-.hc-thread-info-username {
+.hc-thread-info-username, .hc-thread-info-email {
 	font-size: 1.1em;
 	color: #330033;
 }

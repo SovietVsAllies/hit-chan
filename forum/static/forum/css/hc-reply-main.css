@@ -27,6 +27,11 @@ body {
 	margin-bottom: 27.2px;
 }
 
+.hc-thread-info span {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 .hc-thread-info-title {
 	color: #996699;
 	font-size: 1.7em;
@@ -66,6 +71,11 @@ body {
 	margin-bottom: 20.8px;
 }
 
+.hc-reply-info span {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 .hc-reply-info-title {
 	font-size: 1.1em;
 	font-weight: bold;
@@ -78,7 +88,7 @@ body {
 	font-size: 1em;
 }
 
-.hc-thread-info-username, .hc-reply-info-username {
+.hc-thread-info-username, .hc-thread-info-email, .hc-reply-info-username, .hc-reply-info-email {
 	color: #330033;
 	font-size: 1.1em;
 }
