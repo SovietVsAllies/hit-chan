@@ -74,6 +74,10 @@ body {
 	padding-right: 110px;
 }
 
+.hc-thread-content pre {
+	font-family: "Microsoft YaHei", sans-serif;
+}
+
 /* Reply Button */
 .hc-thread-info a {
 	display: inline-block;
