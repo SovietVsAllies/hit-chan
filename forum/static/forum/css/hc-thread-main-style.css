@@ -72,10 +72,7 @@ body {
 	padding-top: 17.6px;
 	padding-left: 100px;
 	padding-right: 110px;
-}
-
-.hc-thread-content pre {
-	font-family: "Microsoft YaHei", sans-serif;
+	white-space: pre-wrap;
 }
 
 /* Reply Button */

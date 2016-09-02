@@ -43,6 +43,7 @@ body {
 	padding-left: 30px;
 	padding-right: 80px;
 	font-size: 1.1em;
+	white-space: pre-wrap;
 }
 
 /* Replies */
@@ -67,4 +68,5 @@ body {
 	padding-top: 17.6px;
 	padding-left: 40px;
 	padding-right: 110px;
+	white-space: pre-wrap;
 }

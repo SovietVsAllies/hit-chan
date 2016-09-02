@@ -6,13 +6,13 @@ function loadReplyList(threadId, page) {
 		var i;
 		var length;
 		var item;
+        var quote;
 		var threadInfo;
 		var threadContent;
 		var span;
 		var threadAndReplies;
-        var d;
         var replyContent;
-        var quote;
+        var d;
         var ruleBeforeReplies;
         var ruleBetweenReplies;
 		var list = document.getElementById("hc-threadANDreply-list");

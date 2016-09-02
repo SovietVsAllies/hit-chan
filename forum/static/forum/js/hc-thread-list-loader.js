@@ -12,7 +12,6 @@ function loadThreadList(boardId, page) {
         var countANDcontent;
         var replyCount;
         var threadContent;
-        var threadContentPreserver;
         var span;
         var hyperlink;
         var length;
@@ -83,9 +82,7 @@ function loadThreadList(boardId, page) {
 
                 threadContent = document.createElement("div");
                 threadContent.className = "hc-thread-content";
-                threadContentPreserver = document.createElement("pre");
-                threadContentPreserver.appendChild(document.createTextNode(threads[i].text));
-                threadContent.appendChild(threadContentPreserver);
+                threadContent.appendChild(document.createTextNode(threads[i].text));
                 countANDcontent.appendChild(threadContent);
 
                 item.appendChild(countANDcontent);
