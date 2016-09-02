@@ -29,6 +29,7 @@ body {
 	margin-left: 43.2px;
 	margin-bottom: 20.8px;
 	margin-top: 14.4px;
+	font-size: 1em;
 }
 
 .hc-thread-info span {
@@ -37,7 +38,6 @@ body {
 }
 
 .hc-thread-info-title {
-	font-size: 1.1em;
 	font-weight: bold;
 	color: #996699;
 }
@@ -46,12 +46,6 @@ body {
 	padding-top: 17.6px;
 	padding-left: 40px;
 	padding-right: 90px;
-	font-size: 1em;
-}
-
-.hc-thread-info-username, .hc-thread-info-email {
-	font-size: 1.1em;
-	color: #330033;
 }
 
 /* Reply Button */

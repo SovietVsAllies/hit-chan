@@ -34,14 +34,15 @@ body {
 
 .hc-thread-info-title {
 	color: #996699;
-	font-size: 1.7em;
+	font-size: 1.2em;
 	font-weight: bold;
 }
 
 .hc-thread-content {
 	padding-top: 8px;
 	padding-left: 30px;
-	font-size: 1.7em;
+	padding-right: 80px;
+	font-size: 1.1em;
 }
 
 /* Replies */
@@ -49,6 +50,7 @@ body {
 	margin-top: 14.4px;
 	margin-left: 90px;
 	margin-bottom: 20.8px;
+	font-size: 1em;
 }
 
 .hc-reply-info span {
@@ -57,7 +59,6 @@ body {
 }
 
 .hc-reply-info-title {
-	font-size: 1.1em;
 	font-weight: bold;
 	color: #996699;
 }
@@ -65,10 +66,5 @@ body {
 .hc-reply-content {
 	padding-top: 17.6px;
 	padding-left: 40px;
-	font-size: 1em;
-}
-
-.hc-thread-info-username, .hc-thread-info-email, .hc-reply-info-username, .hc-reply-info-email {
-	color: #330033;
-	font-size: 1.1em;
+	padding-right: 110px;
 }
