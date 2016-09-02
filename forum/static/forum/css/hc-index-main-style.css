@@ -23,7 +23,9 @@
 
 #hc-index-main p {
 	position: relative;
-	top: 16px;
-	font-size: 1em;
-	color: #ccccff;
+	top: 0;
+	padding-left: 80px;
+	font-size: 0.8em;
+	color: #330033;
+	text-align: left;
 }
