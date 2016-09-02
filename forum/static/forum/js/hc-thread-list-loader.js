@@ -7,6 +7,7 @@ function loadThreadList(boardId, page) {
         var board;
         var threads;
         var item;
+        var replyCount;
         var threadInfo;
         var threadContent;
         var span;
@@ -22,6 +23,11 @@ function loadThreadList(boardId, page) {
             for (i = 0; i < length; i++) {
                 item = document.createElement("div");
                 item.className = "hc-thread";
+
+                replyCount = document.createElement("div");
+                replyCount.className = "hc-thread-reply-count";
+                replyCount.appendChild(document.createTextNode(threads[i].reply_count));
+                item.appendChild(replyCount);
 
                 threadInfo = document.createElement("div");
                 threadInfo.className = "hc-thread-info";
