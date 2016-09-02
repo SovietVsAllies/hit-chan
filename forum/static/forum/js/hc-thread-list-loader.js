@@ -24,11 +24,6 @@ function loadThreadList(boardId, page) {
                 item = document.createElement("div");
                 item.className = "hc-thread";
 
-                replyCount = document.createElement("div");
-                replyCount.className = "hc-thread-reply-count";
-                replyCount.appendChild(document.createTextNode(threads[i].reply_count));
-                item.appendChild(replyCount);
-
                 threadInfo = document.createElement("div");
                 threadInfo.className = "hc-thread-info";
 
@@ -74,6 +69,11 @@ function loadThreadList(boardId, page) {
                 threadInfo.appendChild(hyperlink);
 
                 item.appendChild(threadInfo);
+
+                replyCount = document.createElement("div");
+                replyCount.className = "hc-thread-reply-count";
+                replyCount.appendChild(document.createTextNode(threads[i].reply_count));
+                item.appendChild(replyCount);
 
                 threadContent = document.createElement("div");
                 threadContent.className = "hc-thread-content";
