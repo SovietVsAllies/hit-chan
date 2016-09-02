@@ -9,6 +9,8 @@ function loadThreadList(boardId, page) {
         var item;
         var replyCount;
         var threadInfo;
+        var countANDcontent;
+        var replyCount;
         var threadContent;
         var span;
         var hyperlink;
@@ -70,15 +72,20 @@ function loadThreadList(boardId, page) {
 
                 item.appendChild(threadInfo);
 
+                countANDcontent = document.createElement("div");
+                countANDcontent.className = "hc-thread-countANDcontent";
+
                 replyCount = document.createElement("div");
                 replyCount.className = "hc-thread-reply-count";
                 replyCount.appendChild(document.createTextNode(threads[i].reply_count));
-                item.appendChild(replyCount);
+                countANDcontent.appendChild(replyCount);
 
                 threadContent = document.createElement("div");
                 threadContent.className = "hc-thread-content";
                 threadContent.appendChild(document.createTextNode(threads[i].text));
-                item.appendChild(threadContent);
+                countANDcontent.appendChild(threadContent);
+
+                item.appendChild(countANDcontent);
 
                 list.appendChild(item);
                 ruleBetweenThreads = document.createElement("hr");

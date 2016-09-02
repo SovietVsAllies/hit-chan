@@ -26,7 +26,6 @@ body {
 }
 
 .hc-thread {
-	position: relative;
 	margin-bottom: 20.8px;
 	margin-top: 14.4px;
 	font-size: 1em;
@@ -46,29 +45,33 @@ body {
 	color: #996699;
 }
 
+.hc-thread-countANDcontent {
+	position: relative;
+}
+
 .hc-thread-reply-count {
 	display: inline-block;
 	position: absolute;
-	top: 41px;
+	top: 50%;
 	left: 22px;
-	height: 20px;
+	height: 18px;
 	min-width: 20px;
-	padding: 0 1.5px;
+	padding: 0 1.1px;
 	border: 0.1px solid gray;
 	border-radius: 6px;
 	-webkit-border-radius: 6px;
 	background-color: #f5f5f5;
 	text-align: center;
-	line-height: 20px;
+	line-height: 18px;
 	font-size: 0.8em;
 	font-family: "consolas" sans-serif serif;
-	box-shadow: 0.2px 0.2px 1px black;
+	box-shadow: 0.1px 0.1px 0.9px black;
 }
 
 .hc-thread-content {
 	padding-top: 17.6px;
 	padding-left: 100px;
-	padding-right: 90px;
+	padding-right: 110px;
 }
 
 /* Reply Button */
