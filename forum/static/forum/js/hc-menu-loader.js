@@ -41,3 +41,8 @@ function loadHcMenu() {
     xmlHttp.open("GET", "/forum/api/get_board_list/", true);
     xmlHttp.send();
 }
+
+function setHeight(numbeer) {
+    var list = document.getElementById("hc-menu-category-" + numbeer);
+    list.style.height = list.children.length * 10;
+}
