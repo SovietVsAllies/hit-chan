@@ -27,6 +27,7 @@ class Board(Model):
     name = CharField(max_length=50)
     root_post = OneToOneField(Post, on_delete=models.PROTECT)
     rank = PositiveIntegerField(default=1)
+    category = IntegerField(default=0)
 
 
 class User(Model):
