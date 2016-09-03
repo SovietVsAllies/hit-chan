@@ -36,6 +36,7 @@
 #hc-menu-content > li {
 	padding: 0;
 	list-style-type: none;
+	white-space: pre-wrap;
 }
 
 #hc-menu-content > li > a {
