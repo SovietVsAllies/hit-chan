@@ -70,7 +70,12 @@ def get_board_list(request):
     boards = Board.objects.all()
     data = []
     for board in boards:
-        data.append({'id': board.id, 'name': board.name, 'rank': board.rank})
+        data.append({
+            'id': board.id,
+            'name': board.name,
+            'rank': board.rank,
+            'category': board.category,
+        })
     return JsonResponse(data, safe=False, json_dumps_params={'ensure_ascii': False})
 
 

@@ -11,6 +11,7 @@ function loadHcMenu() {
         var length;
         var checkId;
         var checkWhetherBoard;
+        var category;
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
             checkId = document.URL.split("/").slice(-3)[0];
             checkWhetherBoard = document.URL.split("/").slice(-4)[0];
@@ -19,7 +20,6 @@ function loadHcMenu() {
             boards.sort(function(lhs, rhs) {
                 return lhs.rank - rhs.rank;
             });
-            menu = document.getElementById("hc-menu-content");
             length = boards.length;
             for (i = 0; i < length; i++) {
                 item = document.createElement("li");
@@ -30,7 +30,11 @@ function loadHcMenu() {
                     hyperlink.className = "active";
                 }
                 item.appendChild(hyperlink);
-                menu.appendChild(item);
+                category = parseInt(boards[i].category);
+                if (category < 1 || 6 < category) {
+                    category = 1;
+                }
+                document.getElementById("hc-menu-category-" + category).appendChild(item);
             }
         }
     }
