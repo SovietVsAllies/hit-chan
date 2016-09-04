@@ -43,38 +43,58 @@
   </div>
 
   <div id="hc-menu">
-    <h2 class="category">&nbsp;板块分区</h2>
-    <div id="hc-menu-content">
-      <div>
-        <input id="hc-menu-checkbox-1" type="checkbox">
-        <label for="hc-menu-checkbox-1" onclick="setHeight(1)">综合版</label>
-        <ul id="hc-menu-category-1">
-        </ul>
+    <div style="postion:relative">
+      <div id="hc-menu-content">
+        <div>
+          <input id="hc-menu-checkbox-1" type="checkbox">
+          <label for="hc-menu-checkbox-1" onclick="changeHeight(1)">综合版</label>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <ul id="hc-menu-category-1" style="height: 0px;"></ul>
+        </div>
+        <div>
+          <input id="hc-menu-checkbox-2" type="checkbox">
+          <label for="hc-menu-checkbox-2" onclick="changeHeight(2)">私密话题</label>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <ul id="hc-menu-category-2" style="height: 0px;"></ul>
+        </div>
+        <div>
+          <input id="hc-menu-checkbox-3" type="checkbox">
+          <label for="hc-menu-checkbox-3" onclick="changeHeight(3)">学习考试</label>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <ul id="hc-menu-category-3" style="height: 0px;"></ul>
+        </div>
+        <div>
+          <input id="hc-menu-checkbox-4" type="checkbox">
+          <label for="hc-menu-checkbox-4" onclick="changeHeight(4)">生活帮助</label>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <ul id="hc-menu-category-4" style="height: 0px;"></ul>
+        </div>
+        <div>
+          <input id="hc-menu-checkbox-5" type="checkbox">
+          <label for="hc-menu-checkbox-5" onclick="changeHeight(5)">游戏</label>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <ul id="hc-menu-category-5" style="height: 0px;"></ul>
+        </div>
+        <div>
+          <input id="hc-menu-checkbox-6" type="checkbox">
+          <label for="hc-menu-checkbox-6" onclick="changeHeight(6)">动漫</label>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <ul id="hc-menu-category-6" style="height: 0px;"></ul>
+        </div>
+        <div>
+          <input id="hc-menu-checkbox-7" type="checkbox">
+          <label for="hc-menu-checkbox-7" onclick="changeHeight(7)">联系我们</label>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <ul id="hc-menu-category-7" style="height: 0px;"></ul>
+        </div>
       </div>
-      <div>
-        <input id="hc-menu-checkbox-2" type="checkbox">
-        <label for="hc-menu-checkbox-2" onclick="setHeight(2)">私密话题</label>
-        <ul id="hc-menu-category-2"></ul>
-      </div>
-      <div>
-        <input id="hc-menu-checkbox-3" type="checkbox">
-        <label for="hc-menu-checkbox-3" onclick="setHeight(3)">学习考试</label>
-        <ul id="hc-menu-category-3"></ul>
-      </div>
-      <div>
-        <input id="hc-menu-checkbox-4" type="checkbox">
-        <label for="hc-menu-checkbox-4" onclick="setHeight(4)">游戏</label>
-        <ul id="hc-menu-category-4"></ul>
-      </div>
-      <div>
-        <input id="hc-menu-checkbox-5" type="checkbox">
-        <label for="hc-menu-checkbox-5" onclick="setHeight(5)">动漫</label>
-        <ul id="hc-menu-category-5"></ul>
-      </div>
-      <div>
-        <input id="hc-menu-checkbox-6" type="checkbox">
-        <label for="hc-menu-checkbox-6" onclick="setHeight(6)">联系我们</label>
-        <ul id="hc-menu-category-6"></ul>
+      <div id="hc-easter-egg">
+        <img src="{% static 'forum/img/hit.jpg' %}">
+          <h1>制作者</h1>
+          <h2>Moandor</h2>
+          <h2>moandor.y@gmail.com</h2>
+          <h2>ANDI_Mckee</h2>
+          <h2>mckee4working@gmail.com</h2>
       </div>
     </div>
   </div>

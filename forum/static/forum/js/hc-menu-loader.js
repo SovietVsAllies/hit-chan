@@ -1,9 +1,9 @@
 "use strict";
 
-function setHeight(number) {
+function changeHeight(number) {
     var list = document.getElementById("hc-menu-category-" + number);
     if (list.style.height == "0px") {
-        list.style.height = (list.children.length * 25) + "px";
+        list.style.height = (list.children.length * 35) + "px";
     } else {
         list.style.height = "0px";
     }
@@ -43,7 +43,7 @@ function loadHcMenu() {
                     category = 1;
                 }
                 if (checkWhetherBoard === "b" && checkId === boards[i].id.toString()) {
-                    hyperlink.id = "active";
+                    hyperlink.className = "active";
                     currentCategory = category;
                 }
                 item.appendChild(hyperlink);
@@ -51,10 +51,12 @@ function loadHcMenu() {
             }
             if (currentCategory < 1 || currentCategory > 6) {
                 for (i2 = 1; i2 <= 6; i2++) {
-                    setHeight(i2);
+                    document.getElementById("hc-menu-checkbox-" + i2).checked = true;
+                    changeHeight(i2);
                 }
             } else {
-                setHeight(currentCategory);
+                changeHeight(currentCategory);
+                document.getElementById("hc-menu-checkbox-" + currentCategory).checked = true;
             }
         }
     }
