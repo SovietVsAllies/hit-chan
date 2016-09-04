@@ -1,5 +1,4 @@
 #hc-menu {
-	z-index: 1;
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -10,6 +9,8 @@
 	background-color: #fff;
 	font-family: "Microsoft YaHei", sans-serif !important;
 	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	box-shadow: 0 3px 5px black;
     overflow: auto;
 }
@@ -121,7 +122,7 @@
 
 #hc-easter-egg {
 	z-index: -1;
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	left: 0;
 	width: 177px;
