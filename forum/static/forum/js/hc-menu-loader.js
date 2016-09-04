@@ -39,7 +39,7 @@ function loadHcMenu() {
                 hyperlink.text = boards[i].name;
                 hyperlink.setAttribute("href", "/forum/b/" + boards[i].id + "/");
                 category = parseInt(boards[i].category);
-                if (category < 1 || 6 < category) {
+                if (category < 1 || 7 < category) {
                     category = 1;
                 }
                 if (checkWhetherBoard === "b" && checkId === boards[i].id.toString()) {
@@ -49,8 +49,8 @@ function loadHcMenu() {
                 item.appendChild(hyperlink);
                 document.getElementById("hc-menu-category-" + category).appendChild(item);
             }
-            if (currentCategory < 1 || currentCategory > 6) {
-                for (i2 = 1; i2 <= 6; i2++) {
+            if (currentCategory < 1 || currentCategory > 7) {
+                for (i2 = 1; i2 <= 7; i2++) {
                     document.getElementById("hc-menu-checkbox-" + i2).checked = true;
                     changeHeight(i2);
                 }
