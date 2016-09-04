@@ -42,11 +42,43 @@
     <a href="/forum/"></a>
   </div>
 
-	<div id="hc-menu">
-    <h2 class="category">&nbsp板块分区</h2>
-    <ul id="hc-menu-content">
-    </ul>
+  <div id="hc-menu">
+    <h2 class="category">&nbsp;板块分区</h2>
+    <div id="hc-menu-content">
+      <div>
+        <input id="hc-menu-checkbox-1" type="checkbox">
+        <label for="hc-menu-checkbox-1" onclick="setHeight(1)">综合版</label>
+        <ul id="hc-menu-category-1">
+        </ul>
+      </div>
+      <div>
+        <input id="hc-menu-checkbox-2" type="checkbox">
+        <label for="hc-menu-checkbox-2" onclick="setHeight(2)">私密话题</label>
+        <ul id="hc-menu-category-2"></ul>
+      </div>
+      <div>
+        <input id="hc-menu-checkbox-3" type="checkbox">
+        <label for="hc-menu-checkbox-3" onclick="setHeight(3)">学习考试</label>
+        <ul id="hc-menu-category-3"></ul>
+      </div>
+      <div>
+        <input id="hc-menu-checkbox-4" type="checkbox">
+        <label for="hc-menu-checkbox-4" onclick="setHeight(4)">游戏</label>
+        <ul id="hc-menu-category-4"></ul>
+      </div>
+      <div>
+        <input id="hc-menu-checkbox-5" type="checkbox">
+        <label for="hc-menu-checkbox-5" onclick="setHeight(5)">动漫</label>
+        <ul id="hc-menu-category-5"></ul>
+      </div>
+      <div>
+        <input id="hc-menu-checkbox-6" type="checkbox">
+        <label for="hc-menu-checkbox-6" onclick="setHeight(6)">联系我们</label>
+        <ul id="hc-menu-category-6"></ul>
+      </div>
+    </div>
   </div>
+
   <div class="main">
 
   	<div id="hc-threadANDreply-list">
@@ -59,7 +91,7 @@
       <form id="hc-post-form" action="/forum/api/post_thread/" method="post">
         {% csrf_token %}
         <h1 id="hc-post-title">
-          回复到&nbsp&nbspNo.<span id="threadId" maxlength="50"></span>
+          回复到&nbsp;&nbsp;No.<span id="threadId" maxlength="50"></span>
         </h1>
         <div class="hc-post-form-input">
           <div>名称</div>

@@ -37,6 +37,10 @@
 	display: none;
 }
 
+#hc-menu-content label {
+	display: block;
+}
+
 #hc-menu-content ul {
 	height: 0px;
 	overflow: hidden;
@@ -56,6 +60,8 @@
 }
 
 #hc-menu-content li {
+	display: block;
+	height: 25px;
 	padding: 0;
 	list-style-type: none;
 	white-space: pre-wrap;
@@ -79,7 +85,7 @@
 	color: white;
 }
 
-#hc-menu-content li > a.active {
+#hc-menu-content li.active {
 	background-color: #da70d6;
 	color: white;
 }

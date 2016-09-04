@@ -1,5 +1,14 @@
 "use strict";
 
+function setHeight(number) {
+    var list = document.getElementById("hc-menu-category-" + number);
+    if (list.style.height == "0px") {
+        list.style.height = (list.children.length * 25) + "px";
+    } else {
+        list.style.height = "0px";
+    }
+}
+
 function loadHcMenu() {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() {
@@ -12,6 +21,8 @@ function loadHcMenu() {
         var checkId;
         var checkWhetherBoard;
         var category;
+        var currentCategory;
+        var i2;
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
             checkId = document.URL.split("/").slice(-3)[0];
             checkWhetherBoard = document.URL.split("/").slice(-4)[0];
@@ -20,6 +31,7 @@ function loadHcMenu() {
             boards.sort(function(lhs, rhs) {
                 return lhs.rank - rhs.rank;
             });
+            currentCategory = -1;
             length = boards.length;
             for (i = 0; i < length; i++) {
                 item = document.createElement("li");
@@ -27,7 +39,8 @@ function loadHcMenu() {
                 hyperlink.text = boards[i].name;
                 hyperlink.setAttribute("href", "/forum/b/" + boards[i].id + "/");
                 if (checkWhetherBoard === "b" && checkId === boards[i].id.toString()) {
-                    hyperlink.className = "active";
+                    hyperlink.id = "active";
+                    currentCategory = boards[i].category;
                 }
                 item.appendChild(hyperlink);
                 category = parseInt(boards[i].category);
@@ -36,13 +49,15 @@ function loadHcMenu() {
                 }
                 document.getElementById("hc-menu-category-" + category).appendChild(item);
             }
+            if (currentCategory === -1) {
+                for (i2 = 1; i2 <= 6; i2++) {
+                    setHeight(i2);
+                }
+            } else {
+                setHeight(currentCategory);
+            }
         }
     }
     xmlHttp.open("GET", "/forum/api/get_board_list/", true);
     xmlHttp.send();
-}
-
-function setHeight(numbeer) {
-    var list = document.getElementById("hc-menu-category-" + numbeer);
-    list.style.height = list.children.length * 10;
 }
