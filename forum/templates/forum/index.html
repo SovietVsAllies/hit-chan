@@ -3,6 +3,7 @@
 <head>
   <title>匿名版 - HitChan</title>
   <meta charset="UTF-8"> 
+  {% load static %}
   <style>
     * {
       margin: 0;
@@ -10,13 +11,54 @@
       outline: 0;
       font-size: 100%;
     }
+    #hc-index-main {
+      position: fixed;
+      left: 177px;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+    #hc-index-title-1 {
+      margin-top: 82px;
+      font-family: "Microsoft YaHei", sans-serif;
+      text-align: center;
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #330033;
+      text-shadow: 2px 2px 2px #9999cc;
+    }
+    #hc-index-title-2 {
+      margin-bottom: 70px;
+      font-family: "Microsoft YaHei", sans-serif;
+      text-align: center;
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #ffffff;
+      text-shadow: 2px 2px 2px #9999cc;
+    }
+    #hc-index-background {
+      z-index: -1;
+      position: fixed;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 35px;
+      left: 172px;
+      -webkit-filter: blur(6px);
+      -moz-filter: blur(6px);
+      -o-filter: blur(6px);
+      -ms-filter: blur(6px);
+      filter: blur(6px);
+    }
+    #hc-index-background img {
+      width: 100%;
+      height: 100%;
+    }
   </style>
-  {% load static %}
   <link rel="shortcut icon" href="{% static 'forum/img/favicon.png' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-menu-style.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-top-bar-style.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'forum/font-awesome/css/font-awesome.min.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-index-main-style.css' %}">
   <script type="text/javascript" src="{% static 'forum/js/hc-menu-loader.js' %}"></script>
 </head>
 <body onload="loadHcMenu()">
@@ -62,15 +104,11 @@
   </div>
 
   <div id="hc-index-main">
-    <h1>别让你的舌头抢先于你的思考。—— 德谟克里特</h1>
-    <img src="{% static 'forum/img/index.jpg' %}" alt="H I T">
-    <p>
-      欢迎欢迎~HitChan是一个彻彻底底的匿名聊天网站，旨在为大家创造一个自由、开放，可以搞基、py交易、以及谈谈自己的私密话题的小天地。<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;···在这里每个人将由uid号进行区分，uid号对应着本人的电脑。同时每个人也可以给自己加一个羞耻的名字。（噗<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;···服务器设置在秘密基地，所以原则上言论自由，但是如果发现有谩骂、攻击等行为的用户，请前往<a href="/forum/b/23/1/">有关部门</a>进行举报。<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;···被举报者一经查实，将在未来没收cookies（封禁功能尚不完善T T）。<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;···现在网站初步建设完成，还很不完善，将试运作一段时间。如果没了大大们的<a href="/forum/b/24/1/">意见和建议</a>，我们不能够茁壮成长。如果您发现了BUG，那您赶紧<a href="/forum/b/25/1/">告诉我</a>，我们将拍死他！
-    </p>
+    <h1 id="hc-index-title-1">别让你的舌头抢先于你的思考。—— 德谟克里特</h1>
+    <h2 id="hc-index-title-2">awetawefsdfz</h2>
+  </div>
+  <div id="hc-index-background">
+    <img src="{% static 'forum/img/index-bg.jpg' %}">
   </div>
 
   <script type="text/javascript">
