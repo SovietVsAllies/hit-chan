@@ -38,18 +38,18 @@ function loadHcMenu() {
                 hyperlink = document.createElement("a");
                 hyperlink.text = boards[i].name;
                 hyperlink.setAttribute("href", "/forum/b/" + boards[i].id + "/");
-                if (checkWhetherBoard === "b" && checkId === boards[i].id.toString()) {
-                    hyperlink.id = "active";
-                    currentCategory = boards[i].category;
-                }
-                item.appendChild(hyperlink);
                 category = parseInt(boards[i].category);
                 if (category < 1 || 6 < category) {
                     category = 1;
                 }
+                if (checkWhetherBoard === "b" && checkId === boards[i].id.toString()) {
+                    hyperlink.id = "active";
+                    currentCategory = category;
+                }
+                item.appendChild(hyperlink);
                 document.getElementById("hc-menu-category-" + category).appendChild(item);
             }
-            if (currentCategory === -1) {
+            if (currentCategory < 1 || currentCategory > 6) {
                 for (i2 = 1; i2 <= 6; i2++) {
                     setHeight(i2);
                 }
