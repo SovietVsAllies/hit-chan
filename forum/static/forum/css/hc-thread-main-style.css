@@ -73,6 +73,7 @@ body {
 	padding-left: 100px;
 	padding-right: 110px;
 	white-space: pre-wrap;
+	word-wrap: break-word;
 }
 
 /* Reply Button */

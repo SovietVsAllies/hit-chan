@@ -44,6 +44,7 @@ body {
 	padding-right: 80px;
 	font-size: 1.1em;
 	white-space: pre-wrap;
+	word-wrap: break-word;
 }
 
 /* Replies */
