@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
 <head>
   <title id="title"></title>
   <meta charset="UTF-8">
@@ -13,131 +13,128 @@
   </style>
   {% load static %}
   <link rel="shortcut icon" href="{% static 'forum/img/favicon.png' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-top-bar-style.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-menu-style.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-separator-style.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-tool-style.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-navigation-style.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-post-form-style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/top-bar.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/side-bar.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/separator.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/tool.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/navigation.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/post-form.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'forum/font-awesome/css/font-awesome.min.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-thread-main-style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/thread-main.css' %}">
   <script type="text/javascript" src="{% static 'forum/js/jquery-3.1.0.js' %}">
   </script>
   <script type="text/javascript" src="{% static 'forum/js/moment-with-locales.js' %}">
   </script>
-  <script type="text/javascript" src="{% static 'forum/js/hc-menu-loader.js' %}">
+  <script type="text/javascript" src="{% static 'forum/js/side-bar-loader.js' %}">
   </script>
-  <script type="text/javascript" src="{% static 'forum/js/hc-thread-list-loader.js' %}">
+  <script type="text/javascript" src="{% static 'forum/js/thread-list-loader.js' %}">
   </script>
-  <script type="text/javascript" src="{% static 'forum/js/hc-page-navigation-generator.js' %}">
+  <script type="text/javascript" src="{% static 'forum/js/page-navigation-generator.js' %}">
   </script>
-  <script type="text/javascript" src="{% static 'forum/js/hc-tools.js' %}">
+  <script type="text/javascript" src="{% static 'forum/js/tools.js' %}">
   </script>
-  <script type="text/javascript" src="{% static 'forum/js/hc-post-form.js' %}">
+  <script type="text/javascript" src="{% static 'forum/js/post-form.js' %}">
   </script>
 </head>
 <body onload="load()">
-  <div class="hc-top-bar">
+  <header id="top-bar">
     <h1>H I T C h a n !</h1>
     <a href="/forum/"></a>
+  </header>
+  <div id="board-wrapper">
+    <nav id="side-bar">
+      <div id="side-bar-content">
+        <div>
+          <input id="side-bar-checkbox-1" type="checkbox">
+          <label for="side-bar-checkbox-1" onclick="changeHeight(1)">综合版</label>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <ul id="side-bar-category-1" style="height: 0px;"></ul>
+        </div>
+        <div>
+          <input id="side-bar-checkbox-2" type="checkbox">
+          <label for="side-bar-checkbox-2" onclick="changeHeight(2)">私密话题</label>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <ul id="side-bar-category-2" style="height: 0px;"></ul>
+        </div>
+        <div>
+          <input id="side-bar-checkbox-3" type="checkbox">
+          <label for="side-bar-checkbox-3" onclick="changeHeight(3)">学习考试</label>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <ul id="side-bar-category-3" style="height: 0px;"></ul>
+        </div>
+        <div>
+          <input id="side-bar-checkbox-4" type="checkbox">
+          <label for="side-bar-checkbox-4" onclick="changeHeight(4)">生活帮助</label>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <ul id="side-bar-category-4" style="height: 0px;"></ul>
+        </div>
+        <div>
+          <input id="side-bar-checkbox-5" type="checkbox">
+          <label for="side-bar-checkbox-5" onclick="changeHeight(5)">游戏</label>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <ul id="side-bar-category-5" style="height: 0px;"></ul>
+        </div>
+        <div>
+          <input id="side-bar-checkbox-6" type="checkbox">
+          <label for="side-bar-checkbox-6" onclick="changeHeight(6)">动漫</label>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <ul id="side-bar-category-6" style="height: 0px;"></ul>
+        </div>
+        <div>
+          <input id="side-bar-checkbox-7" type="checkbox">
+          <label for="side-bar-checkbox-7" onclick="changeHeight(7)">联系我们</label>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <ul id="side-bar-category-7" style="height: 0px;"></ul>
+        </div>
+      </div>
+      <div id="easter-egg">
+        <img src="{% static 'forum/img/hit.jpg' %}">
+          <h1>制作者</h1>
+          <h2>Moandor</h2>
+          <h2>moandor.y@gmail.com</h2>
+          <h2>ANDI_Mckee</h2>
+          <h2>mckee4working@gmail.com</h2>
+      </div>
+    </nav>
+
+    <div class="main">
+      <div id="board-title">
+      </div>
+      <div id="thread-list">
+      </div>
+      <ul id="page-navigation">
+      </ul>
+      <div id="post">
+        <h1 id="post-title">发表新串</h1>
+        <form id="post-form" action="/forum/api/post_thread/" method="post">
+          {% csrf_token %}
+          <div class="post-form-input">
+            <div>名称</div>
+            <input type="text" name="username" maxlength="50">
+          </div>
+          <div class="post-form-input">
+            <div>Email</div>
+            <input type="text" name="email" maxlength="50">
+          </div>
+          <div class="post-form-input">
+            <div>标题</div>
+            <input type="text" name="title" maxlength="50">
+          </div>
+          <div class="post-form-input" style="height: 150px;">
+            <div style="height: 100%; line-height: 150px;">正文</div>
+            <textarea name="text" placeholder="来吐槽吧～"></textarea>
+          </div>
+          <div class="post-form-submit">
+            <input type="submit" value="提交">
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <a href="javascript:void(0)" class="tool">
+      <i class="fa fa-angle-double-up fa-3x" aria-hidden="true"></i>
+    </a>
   </div>
-
-  <div id="hc-menu">
-    <div id="hc-menu-content">
-      <div>
-        <input id="hc-menu-checkbox-1" type="checkbox">
-        <label for="hc-menu-checkbox-1" onclick="changeHeight(1)">综合版</label>
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-        <ul id="hc-menu-category-1" style="height: 0px;"></ul>
-      </div>
-      <div>
-        <input id="hc-menu-checkbox-2" type="checkbox">
-        <label for="hc-menu-checkbox-2" onclick="changeHeight(2)">私密话题</label>
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-        <ul id="hc-menu-category-2" style="height: 0px;"></ul>
-      </div>
-      <div>
-        <input id="hc-menu-checkbox-3" type="checkbox">
-        <label for="hc-menu-checkbox-3" onclick="changeHeight(3)">学习考试</label>
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-        <ul id="hc-menu-category-3" style="height: 0px;"></ul>
-      </div>
-      <div>
-        <input id="hc-menu-checkbox-4" type="checkbox">
-        <label for="hc-menu-checkbox-4" onclick="changeHeight(4)">生活帮助</label>
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-        <ul id="hc-menu-category-4" style="height: 0px;"></ul>
-      </div>
-      <div>
-        <input id="hc-menu-checkbox-5" type="checkbox">
-        <label for="hc-menu-checkbox-5" onclick="changeHeight(5)">游戏</label>
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-        <ul id="hc-menu-category-5" style="height: 0px;"></ul>
-      </div>
-      <div>
-        <input id="hc-menu-checkbox-6" type="checkbox">
-        <label for="hc-menu-checkbox-6" onclick="changeHeight(6)">动漫</label>
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-        <ul id="hc-menu-category-6" style="height: 0px;"></ul>
-      </div>
-      <div>
-        <input id="hc-menu-checkbox-7" type="checkbox">
-        <label for="hc-menu-checkbox-7" onclick="changeHeight(7)">联系我们</label>
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-        <ul id="hc-menu-category-7" style="height: 0px;"></ul>
-      </div>
-    </div>
-    <div id="hc-easter-egg">
-      <img src="{% static 'forum/img/hit.jpg' %}">
-        <h1>制作者</h1>
-        <h2>Moandor</h2>
-        <h2>moandor.y@gmail.com</h2>
-        <h2>ANDI_Mckee</h2>
-        <h2>mckee4working@gmail.com</h2>
-    </div>
-  </div>
-
-  <div class="main">
-
-    <div id="hc-board-title">
-    </div>
-
-    <div id="hc-thread-list">
-    </div>
-
-    <ul id="hc-page-navigation">
-    </ul>
-
-    <div id="hc-post">
-      <h1 id="hc-post-title">发表新串</h1>
-      <form id="hc-post-form" action="/forum/api/post_thread/" method="post">
-        {% csrf_token %}
-        <div class="hc-post-form-input">
-          <div>名称</div>
-          <input type="text" name="username" maxlength="50">
-        </div>
-        <div class="hc-post-form-input">
-          <div>Email</div>
-          <input type="text" name="email" maxlength="50">
-        </div>
-        <div class="hc-post-form-input">
-          <div>标题</div>
-          <input type="text" name="title" maxlength="50">
-        </div>
-        <div class="hc-post-form-input" style="height: 150px;">
-          <div style="height: 100%; line-height: 150px;">正文</div>
-          <textarea name="text" placeholder="来吐槽吧～"></textarea>
-        </div>
-        <div class="hc-post-form-submit">
-          <input type="submit" value="提交">
-        </div>
-      </form>
-    </div>
-
-  </div>
-  <a href="javascript:void(0)" class="hc-tool">
-    <i class="fa fa-angle-double-up fa-3x" aria-hidden="true"></i>
-  </a>
 
   <script type="text/javascript">
     function load() {
@@ -149,8 +146,8 @@
       input.setAttribute("type", "hidden");
       input.setAttribute("name", "board_id");
       input.setAttribute("value", boardId);
-      document.getElementById("hc-post-form").appendChild(input);
-      loadHcMenu();
+      document.getElementById("post-form").appendChild(input);
+      loadSideBar();
       loadThreadList(boardId, page);
     }
   </script>

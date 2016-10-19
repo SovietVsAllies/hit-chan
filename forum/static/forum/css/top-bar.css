@@ -3,7 +3,7 @@
 	src: url(/static/forum/font/ShadowsIntoLight.ttf) format("truetype");
 }
 
-.hc-top-bar {
+#top-bar {
 	z-index: 100;
 	position: fixed;
 	top: 0;
@@ -15,7 +15,7 @@
 	box-shadow: 0 0 8px black;
 }
 
-.hc-top-bar h1 {
+#top-bar h1 {
 	display: inline-block;
 	position: relative;
 	left: 32px;
@@ -28,7 +28,7 @@
 	color: white;
 }
 
-.hc-top-bar a {
+#top-bar a {
 	float: right;
 	height: 40px;
 	width: 32px;
@@ -38,17 +38,17 @@
 	line-height: 40px;
 	white-space: nowrap;
 	transition-duration: 0.4s;
-    -webkit-transition-duration: 0.4s;	
+    -webkit-transition-duration: 0.4s;
 }
 
-.hc-top-bar a::before {
+#top-bar a::before {
 	font-family: FontAwesome;
 	font-size: 1.5em;
 	content: "\f015";
 	color: white;
 }
 
-.hc-top-bar a:hover {
+#top-bar a:hover {
 	color: white;
 	background-color: #cccccc;
 }

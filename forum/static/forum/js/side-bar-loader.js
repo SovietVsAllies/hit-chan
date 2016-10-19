@@ -1,7 +1,7 @@
 "use strict";
 
 function changeHeight(number) {
-    var list = document.getElementById("hc-menu-category-" + number);
+    var list = document.getElementById("side-bar-category-" + number);
     if (list.style.height == "0px") {
         list.style.height = (list.children.length * 35) + "px";
     } else {
@@ -9,7 +9,7 @@ function changeHeight(number) {
     }
 }
 
-function loadHcMenu() {
+function loadSideBar() {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() {
         var i;
@@ -47,16 +47,16 @@ function loadHcMenu() {
                     currentCategory = category;
                 }
                 item.appendChild(hyperlink);
-                document.getElementById("hc-menu-category-" + category).appendChild(item);
+                document.getElementById("side-bar-category-" + category).appendChild(item);
             }
             if (currentCategory < 1 || currentCategory > 7) {
                 for (i2 = 1; i2 <= 7; i2++) {
-                    document.getElementById("hc-menu-checkbox-" + i2).checked = true;
+                    document.getElementById("side-bar-checkbox-" + i2).checked = true;
                     changeHeight(i2);
                 }
             } else {
                 changeHeight(currentCategory);
-                document.getElementById("hc-menu-checkbox-" + currentCategory).checked = true;
+                document.getElementById("side-bar-checkbox-" + currentCategory).checked = true;
             }
         }
     }

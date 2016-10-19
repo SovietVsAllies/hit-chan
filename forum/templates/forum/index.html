@@ -1,8 +1,8 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="zh-Hans">
 <head>
   <title>匿名版 - HitChan</title>
-  <meta charset="UTF-8"> 
+  <meta charset="UTF-8">
   {% load static %}
   <style>
     * {
@@ -11,7 +11,7 @@
       outline: 0;
       font-size: 100%;
     }
-    #hc-index-main {
+    #index-main {
       position: fixed;
       left: 177px;
       right: 0;
@@ -19,7 +19,7 @@
       bottom: 0;
       overflow: auto;
     }
-    #hc-index-title-1 {
+    #index-title-1 {
       position: absolute;
       left: 0;
       right: 0;
@@ -33,7 +33,7 @@
       color: #330033;
       text-shadow: 0.4px 0.4px 1px #663366;
     }
-    #hc-index-title-2 {
+    #index-title-2 {
       position: absolute;
       left: 0;
       right: 0;
@@ -49,7 +49,7 @@
       color: #ffffff;
       text-shadow: 3px 3px 3px gray;
     }
-    #hc-index-background {
+    #index-background {
       z-index: -1;
       position: fixed;
       display: block;
@@ -63,85 +63,89 @@
       -ms-filter: blur(5px);
       filter: blur(5px);
     }
-    #hc-index-background img {
+    #index-background img {
       width: 100%;
       height: 100%;
     }
   </style>
   <link rel="shortcut icon" href="{% static 'forum/img/favicon.png' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-menu-style.css' %}">
-  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/hc-top-bar-style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/side-bar.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'forum/css/top-bar.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'forum/font-awesome/css/font-awesome.min.css' %}">
-  <script type="text/javascript" src="{% static 'forum/js/hc-menu-loader.js' %}"></script>
+  <script type="text/javascript" src="{% static 'forum/js/side-bar-loader.js' %}"></script>
+  <!--[if lt IE 9]>
+  <script src="{% static 'forum/js/html5shiv.min.js' %}"></script>
+  <![endif]-->
 </head>
-<body onload="loadHcMenu()">
-  <div class="hc-top-bar">
+<body onload="loadSideBar()">
+  <header id="top-bar">
     <h1>H I T C h a n !</h1>
     <a href="/forum/"></a>
-  </div>
-  
-  <div id="hc-menu">
-    <div id="hc-menu-content">
-      <div>
-        <input id="hc-menu-checkbox-1" type="checkbox">
-        <label for="hc-menu-checkbox-1" onclick="changeHeight(1)">综合版</label>
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-        <ul id="hc-menu-category-1" style="height: 0px;"></ul>
-      </div>
-      <div>
-        <input id="hc-menu-checkbox-2" type="checkbox">
-        <label for="hc-menu-checkbox-2" onclick="changeHeight(2)">私密话题</label>
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-        <ul id="hc-menu-category-2" style="height: 0px;"></ul>
-      </div>
-      <div>
-        <input id="hc-menu-checkbox-3" type="checkbox">
-        <label for="hc-menu-checkbox-3" onclick="changeHeight(3)">学习考试</label>
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-        <ul id="hc-menu-category-3" style="height: 0px;"></ul>
-      </div>
-      <div>
-        <input id="hc-menu-checkbox-4" type="checkbox">
-        <label for="hc-menu-checkbox-4" onclick="changeHeight(4)">生活帮助</label>
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-        <ul id="hc-menu-category-4" style="height: 0px;"></ul>
-      </div>
-      <div>
-        <input id="hc-menu-checkbox-5" type="checkbox">
-        <label for="hc-menu-checkbox-5" onclick="changeHeight(5)">游戏</label>
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-        <ul id="hc-menu-category-5" style="height: 0px;"></ul>
-      </div>
-      <div>
-        <input id="hc-menu-checkbox-6" type="checkbox">
-        <label for="hc-menu-checkbox-6" onclick="changeHeight(6)">动漫</label>
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-        <ul id="hc-menu-category-6" style="height: 0px;"></ul>
-      </div>
-      <div>
-        <input id="hc-menu-checkbox-7" type="checkbox">
-        <label for="hc-menu-checkbox-7" onclick="changeHeight(7)">联系我们</label>
-        <i class="fa fa-chevron-right" aria-hidden="true"></i>
-        <ul id="hc-menu-category-7" style="height: 0px;"></ul>
-      </div>
-    </div>
-    <div id="hc-easter-egg">
-      <img src="{% static 'forum/img/hit.jpg' %}">
-        <h1>制作者</h1>
-        <h2>Moandor</h2>
-        <h2>moandor.y@gmail.com</h2>
-        <h2>ANDI_Mckee</h2>
-        <h2>mckee4working@gmail.com</h2>
-    </div>
-  </div>
+  </header>
 
-  <div id="hc-index-main">
+  <div id="index-wrapper">
+    <nav id="side-bar">
+      <div id="side-bar-content">
+        <div>
+          <input id="side-bar-checkbox-1" type="checkbox">
+          <label for="side-bar-checkbox-1" onclick="changeHeight(1)">综合版</label>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <ul id="side-bar-category-1" style="height: 0px;"></ul>
+        </div>
+        <div>
+          <input id="side-bar-checkbox-2" type="checkbox">
+          <label for="side-bar-checkbox-2" onclick="changeHeight(2)">私密话题</label>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <ul id="side-bar-category-2" style="height: 0px;"></ul>
+        </div>
+        <div>
+          <input id="side-bar-checkbox-3" type="checkbox">
+          <label for="side-bar-checkbox-3" onclick="changeHeight(3)">学习考试</label>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <ul id="side-bar-category-3" style="height: 0px;"></ul>
+        </div>
+        <div>
+          <input id="side-bar-checkbox-4" type="checkbox">
+          <label for="side-bar-checkbox-4" onclick="changeHeight(4)">生活帮助</label>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <ul id="side-bar-category-4" style="height: 0px;"></ul>
+        </div>
+        <div>
+          <input id="side-bar-checkbox-5" type="checkbox">
+          <label for="side-bar-checkbox-5" onclick="changeHeight(5)">游戏</label>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <ul id="side-bar-category-5" style="height: 0px;"></ul>
+        </div>
+        <div>
+          <input id="side-bar-checkbox-6" type="checkbox">
+          <label for="side-bar-checkbox-6" onclick="changeHeight(6)">动漫</label>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <ul id="side-bar-category-6" style="height: 0px;"></ul>
+        </div>
+        <div>
+          <input id="side-bar-checkbox-7" type="checkbox">
+          <label for="side-bar-checkbox-7" onclick="changeHeight(7)">联系我们</label>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          <ul id="side-bar-category-7" style="height: 0px;"></ul>
+        </div>
+      </div>
+      <div id="easter-egg">
+        <img src="{% static 'forum/img/hit.jpg' %}">
+          <h1>制作者</h1>
+          <h2>Moandor</h2>
+          <h2>moandor.y@gmail.com</h2>
+          <h2>ANDI_Mckee</h2>
+          <h2>mckee4working@gmail.com</h2>
+      </div>
+    </nav>
+  </div>
+  <div id="index-main">
     <div style="position:relative;height:100%;">
-      <h1 id="hc-index-title-1">别让你的舌头抢先于你的思考。—— 德谟克里特</h1>
-      <h2 id="hc-index-title-2">匿名，是一种自由的态度。</h2>
+      <h1 id="index-title-1">别让你的舌头抢先于你的思考。—— 德谟克里特</h1>
+      <h2 id="index-title-2">匿名，是一种自由的态度。</h2>
     </div>
   </div>
-  <div id="hc-index-background">
+  <div id="index-background">
     <img src="{% static 'forum/img/index-bg.jpg' %}">
   </div>
 

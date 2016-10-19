@@ -1,4 +1,4 @@
-#hc-menu {
+#side-bar {
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -15,7 +15,7 @@
     overflow: auto;
 }
 
-#hc-menu-content {
+#side-bar-content {
 	z-index: 3;
 	padding: 0;
 	border: 0;
@@ -23,15 +23,15 @@
 	overflow: auto;
 }
 
-#hc-menu-content > div {
+#side-bar-content > div {
 	position: relative;
 }
 
-#hc-menu-content input {
+#side-bar-content input {
 	display: none;
 }
 
-#hc-menu-content input:checked ~ ul {
+#side-bar-content input:checked ~ ul {
 	-webkit-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
 	-moz-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
 	-o-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
@@ -39,7 +39,7 @@
 	transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
 }
 
-#hc-menu-content label {
+#side-bar-content label {
 	display: block;
 	height: 35px;
 	padding-left: 7px;
@@ -52,7 +52,7 @@
 	letter-spacing: 0.2em;
 }
 
-#hc-menu-content .fa-chevron-right {
+#side-bar-content .fa-chevron-right {
 	display: inline-block;
 	position: absolute;
 	top: 10px;
@@ -66,7 +66,7 @@
 	-ms-transition:  0.4s;
 }
 
-#hc-menu-content input:checked ~ i {
+#side-bar-content input:checked ~ i {
 	transform: rotate(90deg);
 	transition: 0.4s;
 	-webkit-transition: 0.4s;
@@ -75,7 +75,7 @@
 	-ms-transition:  0.4s;
 }
 
-#hc-menu-content ul {
+#side-bar-content ul {
 	height: 0px;
 	overflow: hidden;
 	-webkit-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
@@ -85,7 +85,7 @@
 	transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
 }
 
-#hc-menu-content li {
+#side-bar-content li {
 	display: block;
 	height: 35px;
 	padding: 0;
@@ -100,7 +100,7 @@
 	white-space: pre-wrap;
 }
 
-#hc-menu-content li > a {
+#side-bar-content li > a {
 	display: block;
 	height: 100%;
 	padding-left: 30px;
@@ -111,17 +111,17 @@
     -webkit-transition-duration: 0.4s;
 }
 
-#hc-menu-content li > a:hover {
-	background-color: #cccccc;	
+#side-bar-content li > a:hover {
+	background-color: #cccccc;
 	color: white;
 }
 
-#hc-menu-content .active {
+#side-bar-content .active {
 	background-color: #da70d6;
 	color: white;
 }
 
-#hc-easter-egg {
+#easter-egg {
 	z-index: -1;
 	position: fixed;
 	bottom: 0;
@@ -129,7 +129,7 @@
 	width: 177px;
 }
 
-#hc-easter-egg img {
+#easter-egg img {
 	position: relative;
 	left: 31px;
 	bottom: 35px;
@@ -137,12 +137,12 @@
 	width: 110px;
 }
 
-#hc-easter-egg h1 {
+#easter-egg h1 {
 	font-size: 0.8em;
 	padding-bottom: 60px;
 	text-align: center;
 }
-#hc-easter-egg h2 {
+#easter-egg h2 {
 	position: relative;
 	bottom: 35px;
 	font-size: 0.6em;
